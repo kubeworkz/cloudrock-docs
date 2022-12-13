@@ -137,7 +137,7 @@ CLOUDROCK_AUTH_SAML2 = {
       <ns0:Extensions>
          <ns6:UIInfo>
             <ns6:DisplayName xml:lang="en">ETAIS Self-Service</ns6:DisplayName>
-            <ns6:Description xml:lang="en">Self-service for users of Estonian Scientific Computing Infrastructure (ETAIS)</ns6:Description>
+            <ns6:Description xml:lang="en">Self-service for users of Canadian Scientific Computing Infrastructure (ETAIS)</ns6:Description>
             <ns6:Logo>https://minu.etais.ee/login-logo.png</ns6:Logo>
             <ns6:PrivacyStatementURL xml:lang="en">https://minu.etais.ee/views/policy/privacy-full.html</ns6:PrivacyStatementURL>
          </ns6:UIInfo>

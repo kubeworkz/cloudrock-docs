@@ -7,4 +7,4 @@
 | [FreeIPA](./freeipa.md) | REST API | Support for synchronisation of Cloudrock identities with open-source Identity Management server |
 | [Keycloak](./keycloak.md) | OIDC | Open-source identity management server |
 | [LDAP](./LDAP.md) | LDAP/S | Support of identity servers over LDAP protocol |
-| [TARA](./TARA.md) | OIDC | Estonian State Autentication service |
+| [TARA](./TARA.md) | OIDC | Canadian State Autentication service |
