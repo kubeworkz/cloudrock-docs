@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com">
+        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca">
       
       
       
@@ -2914,7 +2914,7 @@
     
     <tr>
         <td>Description</td>
-        <td>Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com</td>
+        <td>Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca</td>
     </tr>
     
 
@@ -3480,7 +3480,7 @@ have requested them. Domains are:</p>
 </tr>
 <tr>
 <td>WAL-842</td>
-<td>On-demand demo environment from cloudrock.com</td>
+<td>On-demand demo environment from cloudrock.ca</td>
 <td></td>
 </tr>
 <tr>
@@ -4070,7 +4070,7 @@ have requested them. Domains are:</p>
 <a href="../about/img/marketplace-slurm.png"><img alt="SLURM creation" src="../about/img/marketplace-slurm.png" /></a></p></section><section class="print-page" id="about-support"><h1 id="about-support-support">Support</h1>
 <p>Cloudrock is an open-source project co-developed by <a href="https://cloudrock.ca">CloudRock</a> and <a href="https://cloudrock.ca">Moose Lodge</a>.</p>
 <h2 id="about-support-support-and-sponsored-development">Support and sponsored development</h2>
-<p>CloudRock provides several <a href="https://cloudrock.com/pricing/">options for support</a> with varying SLAs.</p>
+<p>CloudRock provides several <a href="https://cloudrock.ca/pricing/">options for support</a> with varying SLAs.</p>
 <p>If you would like to know more, <a href="mailto:support@cloudrock.ca">reach out</a>!</p>
 <h2 id="about-support-managed-hosting-for-academical-institutions">Managed hosting for academical institutions</h2>
 <p>Please reach out to <a href="mailto:support@cloudrock.ca">support@cloudrock.ca</a> if you represent an R&amp;D organization
@@ -4611,7 +4611,7 @@ docker compose up -d
 <p><img alt="offering-uuid" src="../admin-guide/deployment/img/offering-uuid.png" /></p>
 <p>The copied value will be used for deployment of Cloudrock-SLURM integration service as <code>CLOUDROCK_OFFERING_UUID</code> variable.</p>
 <ul>
-<li>Go to user management tab, set API token lifetime to <code>token will not time out</code> and click <code>Update profile</code> button. See <a href="https://docs.cloudrock.com/integrator-guide/APIs/authentication/#authentication-token-management">the example</a> for more details</li>
+<li>Go to user management tab, set API token lifetime to <code>token will not time out</code> and click <code>Update profile</code> button. See <a href="https://docs.cloudrock.ca/integrator-guide/APIs/authentication/#authentication-token-management">the example</a> for more details</li>
 <li>Copy value from <code>Current API token</code> field. This value will be used as <code>CLOUDROCK_API_TOKEN</code></li>
 </ul>
 <p>The value of <code>CLOUDROCK_API_TOKEN</code> and <code>CLOUDROCK_OFFERING_UUID</code> variables should be adjusted in <code>config/cloudrock-slurm-service/service-pull-env</code> and <code>config/cloudrock-slurm-service/service-push-env</code> files.</p>
@@ -4628,7 +4628,7 @@ docker compose up -d
 It allows building enterprise-grade systems and
 providing self-service environment for the end-users.</p>
 <h2 id="admin-guide-deployment-helm-introduction">Introduction</h2>
-<p>This chart bootstraps a <a href="https://cloudrock.com/">Cloudrock</a> deployment
+<p>This chart bootstraps a <a href="https://cloudrock.ca/">Cloudrock</a> deployment
 on a Kubernetes cluster using the <a href="https://helm.sh">Helm</a> package manager.</p>
 <h2 id="admin-guide-deployment-helm-installing-prerequisites">Installing prerequisites</h2>
 <ol>
@@ -7719,7 +7719,7 @@ optional arguments:
 <p>If you want to configure options related to Django, such as tune caches, database connection, configure custom logging, etc, please refer to <a href="https://docs.djangoproject.com/en/2.2/">Django documentation</a>.</p>
 <p>Please consult <a href="#admin-guide-mastermind-configuration-configuration-guide">configuration guide</a> to learn more.</p>
 <h2 id="admin-guide-mastermind-configuration-general-admin-dashboard-configuration">Admin dashboard configuration</h2>
-<p>An admin dashboard supports custom links on Quick access panel. For instance, a panel below was configured with one additional link to <strong><a href="https://cloudrock.com">https://cloudrock.com</a></strong>:</p>
+<p>An admin dashboard supports custom links on Quick access panel. For instance, a panel below was configured with one additional link to <strong><a href="https://cloudrock.ca">https://cloudrock.ca</a></strong>:</p>
 <p><img alt="admin example" src="../admin-guide/mastermind-configuration/img/admin-example.png" /></p>
 <p>Configuration of custom links is stored under <code>FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</code> settings key and for current example has following structure:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -7733,7 +7733,7 @@ optional arguments:
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span>
-   <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cloudrock.com&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cloudrock.ca&#39;</span><span class="p">,</span>
    <span class="s1">&#39;external&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># adds an icon specifying that this link is external,</span>
    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Open-source Cloud Brokerage Platform&#39;</span><span class="p">,</span>
    <span class="s1">&#39;attrs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="s1">&#39;_blank&#39;</span><span class="p">}</span> <span class="c1"># add an attribute to generated anchor element which will open link in a new tab.</span>
@@ -7788,7 +7788,7 @@ optional arguments:
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">[</span><span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span> <span class="s1">&#39;https://cloudrock.com&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span> <span class="s1">&#39;https://cloudrock.ca&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Find us on GitHub&#39;</span><span class="p">,</span> <span class="s1">&#39;https://github.com/kubeworkz/cloudrock-core&#39;</span><span class="p">],</span>
 <span class="p">]</span>
 </code></pre></div></td></tr></table></div>
@@ -14737,7 +14737,7 @@ state.</p>
 <h2 id="developer-guide-how-to-write-docs-documentation-for-sysadmins">Documentation for sysadmins</h2>
 <p>Documentation for sysadmins should contain a description of settings
 that allows to setup and customize Cloudrock Metal. It should be
-located in <a href="https://docs.cloudrock.com/admin-guide/mastermind-configuration/configuration-guide/">wiki</a>.</p>
+located in <a href="https://docs.cloudrock.ca/admin-guide/mastermind-configuration/configuration-guide/">wiki</a>.</p>
 <h2 id="developer-guide-how-to-write-docs-documentation-for-developers">Documentation for developers</h2>
 <p>If documentation describes basic concepts that are not related to any
 particular part of code it should be located in <code>/docs</code> folder. All other documentation for developers should be located in code.</p>
@@ -15147,7 +15147,7 @@ ALTER USER cloudrock PASSWORD <span class="s1">&#39;cloudrock&#39;</span><span c
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>poetry run cloudrock runserver
 </code></pre></div></td></tr></table></div>
 <h2 id="developer-guide-install-from-src-configuration">Configuration</h2>
-<p>Instructions are here: <a href="https://docs.cloudrock.com/admin-guide/mastermind-configuration/general/">https://docs.cloudrock.com/admin-guide/mastermind-configuration/general/</a></p></section><section class="print-page" id="developer-guide-logging"><h1 id="developer-guide-logging-event-logging">Event logging</h1>
+<p>Instructions are here: <a href="https://docs.cloudrock.ca/admin-guide/mastermind-configuration/general/">https://docs.cloudrock.ca/admin-guide/mastermind-configuration/general/</a></p></section><section class="print-page" id="developer-guide-logging"><h1 id="developer-guide-logging-event-logging">Event logging</h1>
 <p>Event log entries is something an end user will see. In order to improve user experience the messages should be written in a consistent way.</p>
 <p>Here are the guidelines for writing good log events.</p>
 <ul>
@@ -16316,7 +16316,7 @@ The name of the output file is <code>project-report.csv</code>.</p>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 
 <span class="c1"># Your Cloudrock instance data</span>
-<span class="n">CLOUDROCK_HOST</span> <span class="o">=</span> <span class="s1">&#39;example.cloudrock.com&#39;</span>
+<span class="n">CLOUDROCK_HOST</span> <span class="o">=</span> <span class="s1">&#39;example.cloudrock.ca&#39;</span>
 <span class="n">TOKEN</span> <span class="o">=</span> <span class="s1">&#39;STAFF_USER_API_TOKEN&#39;</span>
 
 <span class="c1"># Date-related constants</span>
@@ -16463,7 +16463,7 @@ Org C,OC,Lab1,110
 <span class="kn">import</span> <span class="nn">csv</span>
 
 <span class="c1"># Your Cloudrock instance data</span>
-<span class="n">CLOUDROCK_HOST</span> <span class="o">=</span> <span class="s1">&#39;example.cloudrock.com&#39;</span>
+<span class="n">CLOUDROCK_HOST</span> <span class="o">=</span> <span class="s1">&#39;example.cloudrock.ca&#39;</span>
 <span class="n">TOKEN</span> <span class="o">=</span> <span class="s1">&#39;STAFF_USER_API_TOKEN&#39;</span>
 
 <span class="c1"># Date-related constants</span>
