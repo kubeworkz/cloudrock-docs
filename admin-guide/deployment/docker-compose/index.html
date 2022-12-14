@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca">
+        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com">
       
       
       
-      <link rel="icon" href="../../../assets/cloudrock-logo.png">
+      <link rel="icon" href="../../../assets/cloudrock-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="">
   
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Cloudrock Documentation" class="md-header__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -185,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Cloudrock Documentation" class="md-nav__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     Cloudrock Documentation
@@ -965,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../helm/docs/metal-templates/" class="md-nav__link">
+      <a href="../helm/docs/mastermind-templates/" class="md-nav__link">
         Metal templates configuration
       </a>
     </li>
@@ -1311,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/cli-guide/" class="md-nav__link">
+      <a href="../../mastermind-configuration/cli-guide/" class="md-nav__link">
         CLI guide
       </a>
     </li>
@@ -1325,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/configuration-guide/" class="md-nav__link">
+      <a href="../../mastermind-configuration/configuration-guide/" class="md-nav__link">
         Configuration guide
       </a>
     </li>
@@ -1339,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/features/" class="md-nav__link">
+      <a href="../../mastermind-configuration/features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -1353,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/general/" class="md-nav__link">
+      <a href="../../mastermind-configuration/general/" class="md-nav__link">
         General Configuration
       </a>
     </li>
@@ -1367,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/google-calendar/" class="md-nav__link">
+      <a href="../../mastermind-configuration/google-calendar/" class="md-nav__link">
         Configuration of the Google Calendar
       </a>
     </li>
@@ -1381,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/notification-templates/" class="md-nav__link">
+      <a href="../../mastermind-configuration/notification-templates/" class="md-nav__link">
         Overriding notification templates via admin panel
       </a>
     </li>
@@ -1395,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/notifications/" class="md-nav__link">
+      <a href="../../mastermind-configuration/notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1409,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/templates/" class="md-nav__link">
+      <a href="../../mastermind-configuration/templates/" class="md-nav__link">
         Message templates
       </a>
     </li>
@@ -2669,7 +2669,7 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># clone repo</span>
-git clone https://github.com/cloudrock/cloudrock-docker-compose.git
+git clone https://github.com/kubeworkz/cloudrock-docker-compose.git
 <span class="nb">cd</span> cloudrock-docker-compose
 <span class="c1"># setup settings</span>
 cp .env.example .env
@@ -2699,7 +2699,7 @@ docker <span class="nb">exec</span> -t cloudrock-metal-worker cloudrock createst
 <span class="c1"># Create demo categories for OpenStack: Virtual Private Cloud, VMs and Storage</span>
 docker <span class="nb">exec</span> -t cloudrock-metal-worker cloudrock load_categories vpc vm storage
 </code></pre></div></td></tr></table></div>
-<p>Cloudrock UI will be accessible on <a href="http://localhost">http://localhost</a>.
+<p>Cloudrock Cloudrock-UI will be accessible on <a href="http://localhost">http://localhost</a>.
 API will listen on <a href="http://localhost/api">http://localhost/api</a>.</p>
 <p>Healthcheck can be accessed on <a href="http://localhost/health-check">http://localhost/health-check</a>.</p>
 <p>Tearing down and cleaning up:</p>
@@ -2795,7 +2795,7 @@ docker compose up -d
 <p><img alt="offering-uuid" src="../img/offering-uuid.png" /></p>
 <p>The copied value will be used for deployment of Cloudrock-SLURM integration service as <code>CLOUDROCK_OFFERING_UUID</code> variable.</p>
 <ul>
-<li>Go to user management tab, set API token lifetime to <code>token will not time out</code> and click <code>Update profile</code> button. See <a href="https://docs.cloudrock.ca/integrator-guide/APIs/authentication/#authentication-token-management">the example</a> for more details</li>
+<li>Go to user management tab, set API token lifetime to <code>token will not time out</code> and click <code>Update profile</code> button. See <a href="https://docs.cloudrock.com/integrator-guide/APIs/authentication/#authentication-token-management">the example</a> for more details</li>
 <li>Copy value from <code>Current API token</code> field. This value will be used as <code>CLOUDROCK_API_TOKEN</code></li>
 </ul>
 <p>The value of <code>CLOUDROCK_API_TOKEN</code> and <code>CLOUDROCK_OFFERING_UUID</code> variables should be adjusted in <code>config/cloudrock-slurm-service/service-pull-env</code> and <code>config/cloudrock-slurm-service/service-push-env</code> files.</p>
@@ -2871,7 +2871,7 @@ docker compose up -d
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 Cloudrock team
+      Copyright &copy; 2016 - 2021 Cloudrock team
     </div>
   
   

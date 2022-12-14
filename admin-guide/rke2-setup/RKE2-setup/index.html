@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca">
+        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com">
       
       
       
-      <link rel="icon" href="../../../assets/cloudrock-logo.png">
+      <link rel="icon" href="../../../assets/cloudrock-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="">
   
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Cloudrock Documentation" class="md-header__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -185,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Cloudrock Documentation" class="md-nav__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     Cloudrock Documentation
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment/helm/docs/metal-templates/" class="md-nav__link">
+      <a href="../../deployment/helm/docs/mastermind-templates/" class="md-nav__link">
         Metal templates configuration
       </a>
     </li>
@@ -1171,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/cli-guide/" class="md-nav__link">
+      <a href="../../mastermind-configuration/cli-guide/" class="md-nav__link">
         CLI guide
       </a>
     </li>
@@ -1185,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/configuration-guide/" class="md-nav__link">
+      <a href="../../mastermind-configuration/configuration-guide/" class="md-nav__link">
         Configuration guide
       </a>
     </li>
@@ -1199,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/features/" class="md-nav__link">
+      <a href="../../mastermind-configuration/features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -1213,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/general/" class="md-nav__link">
+      <a href="../../mastermind-configuration/general/" class="md-nav__link">
         General Configuration
       </a>
     </li>
@@ -1227,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/google-calendar/" class="md-nav__link">
+      <a href="../../mastermind-configuration/google-calendar/" class="md-nav__link">
         Configuration of the Google Calendar
       </a>
     </li>
@@ -1241,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/notification-templates/" class="md-nav__link">
+      <a href="../../mastermind-configuration/notification-templates/" class="md-nav__link">
         Overriding notification templates via admin panel
       </a>
     </li>
@@ -1255,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/notifications/" class="md-nav__link">
+      <a href="../../mastermind-configuration/notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1269,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metal-configuration/templates/" class="md-nav__link">
+      <a href="../../mastermind-configuration/templates/" class="md-nav__link">
         Message templates
       </a>
     </li>
@@ -1499,6 +1499,13 @@
         <li class="md-nav__item">
   <a href="#update-of-cloudrock-dependencies" class="md-nav__link">
     Update of Cloudrock dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudrock-log-fetching" class="md-nav__link">
+    Cloudrock log fetching
   </a>
   
 </li>
@@ -2519,6 +2526,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cloudrock-log-fetching" class="md-nav__link">
+    Cloudrock log fetching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-ssl-certificates" class="md-nav__link">
     Update SSL certificates
   </a>
@@ -2594,7 +2608,7 @@ curl -o longhorn/longhorn-1.3.1.tgz --create-dirs https://github.com/longhorn/ch
 curl -o kubernetes-dashboard/k8s-dashboard-5.10.0.tar.gz --create-dirs https://kubernetes.github.io/dashboard/kubernetes-dashboard-5.10.0.tgz
 curl -s -o bitnami/postgresql-11.9.1.tgz --create-dirs https://charts.bitnami.com/bitnami/postgresql-11.9.1.tgz
 curl -s -o bitnami/rabbitmq-10.3.5.tgz --create-dirs https://charts.bitnami.com/bitnami/rabbitmq-10.3.5.tgz
-curl -sL -o cloudrock/cloudrock-chart.zip --create-dirs https://github.com/cloudrock/cloudrock-helm/archive/refs/heads/master.zip
+curl -sL -o cloudrock/cloudrock-chart.zip --create-dirs https://github.com/kubeworkz/cloudrock-helm/archive/refs/heads/master.zip
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
@@ -2680,6 +2694,21 @@ ansible-playbook -D -i rke2_inventory update-dependencies.yaml
 <span class="nt">minio_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11.10.16</span><span class="w"> </span><span class="c1"># Version of MinIO Helm chart</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>With this setup, the playbook will update PostgreSQL release only. If the user wants to update RabbitMQ too, they should set <code>setup_rabbitmq: yes</code></p>
+<h2 id="cloudrock-log-fetching">Cloudrock log fetching</h2>
+<p>To get logs from Cloudrock containers, a users needs to connect to one of the RKE2 nodes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh &lt;node-ip&gt;
+</code></pre></div></td></tr></table></div>
+<p>A node IP should be chosen from the inventory file (e.g. <code>rke2_inventory</code>).</p>
+<p>In the node's shell, the user should run the following to setup Kubernetes client:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/rke2/rke2.yaml
+</code></pre></div></td></tr></table></div>
+<p>After this, the user can get Cloudrock API logs:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl logs --tail <span class="m">100</span> -l <span class="nv">app</span><span class="o">=</span>cloudrock-metal-api -n default
+</code></pre></div></td></tr></table></div>
+<p>Same works for Celery worker:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl logs --tail <span class="m">100</span> -l <span class="nv">app</span><span class="o">=</span>cloudrock-metal-worker -n default
+</code></pre></div></td></tr></table></div>
+<p><strong>Note: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned</strong></p>
 <h2 id="update-ssl-certificates">Update SSL certificates</h2>
 <p>To update the SSL certificates, please do the following steps:</p>
 <ol>
@@ -2746,7 +2775,7 @@ Please enter backup&#39;s name:
   <small>
     
       Last update:
-      2022-12-09
+      2022-12-14
     
   </small>
 </div>
@@ -2807,7 +2836,7 @@ Please enter backup&#39;s name:
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 Cloudrock team
+      Copyright &copy; 2016 - 2021 Cloudrock team
     </div>
   
   

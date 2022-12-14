@@ -12,7 +12,7 @@ job="kubernetes-services",namespace="default",tenant="HPC"
 
 import calendar
 from datetime import date, datetime, timedelta
-from cloudrock_metal.marketplace import models as mm
+from cloudrock_mastermind.marketplace import models as mm
 from cloudrock_core.core import utils as core_utils
 from django.db.models.aggregates import Sum
 

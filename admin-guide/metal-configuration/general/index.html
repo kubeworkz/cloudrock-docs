@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca">
+        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com">
       
       
       
-      <link rel="icon" href="../../../assets/cloudrock-logo.png">
+      <link rel="icon" href="../../../assets/cloudrock-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="">
   
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Cloudrock Documentation" class="md-header__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -185,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Cloudrock Documentation" class="md-nav__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     Cloudrock Documentation
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment/helm/docs/metal-templates/" class="md-nav__link">
+      <a href="../../deployment/helm/docs/mastermind-templates/" class="md-nav__link">
         Metal templates configuration
       </a>
     </li>
@@ -2519,7 +2519,7 @@
 <p>If you want to configure options related to Django, such as tune caches, database connection, configure custom logging, etc, please refer to <a href="https://docs.djangoproject.com/en/2.2/">Django documentation</a>.</p>
 <p>Please consult <a href="../configuration-guide/">configuration guide</a> to learn more.</p>
 <h2 id="admin-dashboard-configuration">Admin dashboard configuration</h2>
-<p>An admin dashboard supports custom links on Quick access panel. For instance, a panel below was configured with one additional link to <strong><a href="https://cloudrock.ca">https://cloudrock.ca</a></strong>:</p>
+<p>An admin dashboard supports custom links on Quick access panel. For instance, a panel below was configured with one additional link to <strong><a href="https://cloudrock.com">https://cloudrock.com</a></strong>:</p>
 <p><img alt="admin example" src="../img/admin-example.png" /></p>
 <p>Configuration of custom links is stored under <code>FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</code> settings key and for current example has following structure:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2533,7 +2533,7 @@
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span>
-   <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cloudrock.ca&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://cloudrock.com&#39;</span><span class="p">,</span>
    <span class="s1">&#39;external&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># adds an icon specifying that this link is external,</span>
    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Open-source Cloud Brokerage Platform&#39;</span><span class="p">,</span>
    <span class="s1">&#39;attrs&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="s1">&#39;_blank&#39;</span><span class="p">}</span> <span class="c1"># add an attribute to generated anchor element which will open link in a new tab.</span>
@@ -2588,7 +2588,7 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">FLUENT_DASHBOARD_QUICK_ACCESS_LINKS</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">[</span><span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span> <span class="s1">&#39;https://cloudrock.ca&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;[Custom] Cloudrock - Cloud Service&#39;</span><span class="p">,</span> <span class="s1">&#39;https://cloudrock.com&#39;</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">&#39;Find us on GitHub&#39;</span><span class="p">,</span> <span class="s1">&#39;https://github.com/kubeworkz/cloudrock-core&#39;</span><span class="p">],</span>
 <span class="p">]</span>
 </code></pre></div></td></tr></table></div>
@@ -2602,7 +2602,7 @@
   <small>
     
       Last update:
-      2022-09-16
+      2022-09-17
     
   </small>
 </div>
@@ -2663,7 +2663,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 Cloudrock team
+      Copyright &copy; 2016 - 2021 Cloudrock team
     </div>
   
   

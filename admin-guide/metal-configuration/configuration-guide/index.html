@@ -6,11 +6,11 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.ca">
+        <meta name="description" content="Documentation of an open-source marketplace platform Cloudrock. See the latest version at https://docs.cloudrock.com">
       
       
       
-      <link rel="icon" href="../../../assets/cloudrock-logo.png">
+      <link rel="icon" href="../../../assets/cloudrock-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="">
   
     
     
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Cloudrock Documentation" class="md-header__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -185,7 +185,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Cloudrock Documentation" class="md-nav__button md-logo" aria-label="Cloudrock Documentation" data-md-component="logo">
       
-  <img src="../../../assets/cloudrock-logo.png" alt="logo">
+  <img src="../../../assets/cloudrock-logo.svg" alt="logo">
 
     </a>
     Cloudrock Documentation
@@ -825,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment/helm/docs/metal-templates/" class="md-nav__link">
+      <a href="../../deployment/helm/docs/mastermind-templates/" class="md-nav__link">
         Metal templates configuration
       </a>
     </li>
@@ -1851,14 +1851,14 @@
         
           <li class="md-nav__item">
   <a href="#cloudrock-ui_sentry_dsn" class="md-nav__link">
-    CLOUDROCK_UI_SENTRY_DSN
+    CLOUDROCK-UI_SENTRY_DSN
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloudrock-ui_url" class="md-nav__link">
-    CLOUDROCK_UI_URL
+    CLOUDROCK-UI_URL
   </a>
   
 </li>
@@ -1969,7 +1969,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metal_url" class="md-nav__link">
+  <a href="#mastermind_url" class="md-nav__link">
     METAL_URL
   </a>
   
@@ -4655,14 +4655,14 @@
         
           <li class="md-nav__item">
   <a href="#cloudrock-ui_sentry_dsn" class="md-nav__link">
-    CLOUDROCK_UI_SENTRY_DSN
+    CLOUDROCK-UI_SENTRY_DSN
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#cloudrock-ui_url" class="md-nav__link">
-    CLOUDROCK_UI_URL
+    CLOUDROCK-UI_URL
   </a>
   
 </li>
@@ -4773,7 +4773,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metal_url" class="md-nav__link">
+  <a href="#mastermind_url" class="md-nav__link">
     METAL_URL
   </a>
   
@@ -5869,7 +5869,7 @@
 <p>ID of application used for OAuth authentication.</p>
 <h3 id="eduteams_label">EDUTEAMS_LABEL</h3>
 <p>Type: str</p>
-<p>Label is used by UI for rendering login button.</p>
+<p>Label is used by Cloudrock-UI for rendering login button.</p>
 <h3 id="eduteams_management_url">EDUTEAMS_MANAGEMENT_URL</h3>
 <p>Type: str</p>
 <p>The endpoint for user details management.</p>
@@ -5896,7 +5896,7 @@
 <p>ID of application used for OAuth authentication.</p>
 <h3 id="keycloak_label">KEYCLOAK_LABEL</h3>
 <p>Type: str</p>
-<p>Label is used by UI for rendering login button.</p>
+<p>Label is used by Cloudrock-UI for rendering login button.</p>
 <h3 id="keycloak_management_url">KEYCLOAK_MANAGEMENT_URL</h3>
 <p>Type: str</p>
 <p>The endpoint for user details management.</p>
@@ -6123,8 +6123,8 @@
  <span class="s1">&#39;HERO_IMAGE&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
  <span class="s1">&#39;HERO_LINK_LABEL&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
  <span class="s1">&#39;HERO_LINK_URL&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
- <span class="s1">&#39;CLOUDROCK_UI_SENTRY_DSN&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
- <span class="s1">&#39;CLOUDROCK_UI_URL&#39;</span><span class="p">:</span> <span class="s1">&#39;https://example.com/&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;CLOUDROCK-UI_SENTRY_DSN&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+ <span class="s1">&#39;CLOUDROCK-UI_URL&#39;</span><span class="p">:</span> <span class="s1">&#39;https://example.com/&#39;</span><span class="p">,</span>
  <span class="s1">&#39;HTTP_CHUNK_SIZE&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
  <span class="s1">&#39;INVITATIONS_ENABLED&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
  <span class="s1">&#39;INVITATION_CIVIL_NUMBER_HELP_TEXT&#39;</span><span class="p">:</span> <span class="s1">&#39;Must start with a country prefix ie &#39;</span>
@@ -6190,7 +6190,7 @@
 <p>Allows to control /admin writable fields. If this flag is disabled it is impossible to edit any field that corresponds to backend value via /admin. Such restriction allows to save information from corruption.</p>
 <h3 id="brand_color">BRAND_COLOR</h3>
 <p>Type: Optional[str]</p>
-<p>Hex color definition is used in UI landing page for login button.</p>
+<p>Hex color definition is used in Cloudrock-UI landing page for login button.</p>
 <h3 id="countries">COUNTRIES</h3>
 <p>Type: List[str]</p>
 <p>It is used in organization creation dialog in order to limit country choices to predefined set.</p>
@@ -6229,19 +6229,19 @@
 <p>Defines for how long group invitation remains valid.</p>
 <h3 id="hero_image">HERO_IMAGE</h3>
 <p>Type: Optional[str]</p>
-<p>Relative path to image rendered at hero section of UI landing page.</p>
+<p>Relative path to image rendered at hero section of Cloudrock-UI landing page.</p>
 <h3 id="hero_link_label">HERO_LINK_LABEL</h3>
 <p>Type: Optional[str]</p>
-<p>Label for link in hero section of UI landing page. It can be lead to support site or blog post.</p>
+<p>Label for link in hero section of Cloudrock-UI landing page. It can be lead to support site or blog post.</p>
 <h3 id="hero_link_url">HERO_LINK_URL</h3>
 <p>Type: Optional[str]</p>
-<p>Link URL in hero section of UI landing page.</p>
-<h3 id="cloudrock-ui_sentry_dsn">CLOUDROCK_UI_SENTRY_DSN</h3>
+<p>Link URL in hero section of Cloudrock-UI landing page.</p>
+<h3 id="cloudrock-ui_sentry_dsn">CLOUDROCK-UI_SENTRY_DSN</h3>
 <p>Type: Optional[str]</p>
-<p>Sentry Data Source Name for Cloudrock UI project.</p>
-<h3 id="cloudrock-ui_url">CLOUDROCK_UI_URL</h3>
+<p>Sentry Data Source Name for Cloudrock Cloudrock-UI project.</p>
+<h3 id="cloudrock-ui_url">CLOUDROCK-UI_URL</h3>
 <p>Type: str</p>
-<p>It is used for rendering callback URL in UI.</p>
+<p>It is used for rendering callback URL in Cloudrock-UI.</p>
 <h3 id="http_chunk_size">HTTP_CHUNK_SIZE</h3>
 <p>Type: int</p>
 <p>Chunk size for resource fetching from backend API. It is needed in order to avoid too long HTTP request error.</p>
@@ -6287,7 +6287,7 @@
 <h3 id="logging_report_interval">LOGGING_REPORT_INTERVAL</h3>
 <p>Type: timedelta</p>
 <p>Files older that specified interval are filtered out.</p>
-<h3 id="metal_url">METAL_URL</h3>
+<h3 id="mastermind_url">METAL_URL</h3>
 <p>Type: str</p>
 <p>It is used for rendering callback URL in Metal.</p>
 <h3 id="native_name_enabled">NATIVE_NAME_ENABLED</h3>
@@ -6313,7 +6313,7 @@
 <p>Enables organization owners to create an organization.</p>
 <h3 id="powered_by_logo">POWERED_BY_LOGO</h3>
 <p>Type: Optional[str]</p>
-<p>Relative path to image rendered at the bottom of login menu in UI.</p>
+<p>Relative path to image rendered at the bottom of login menu in Cloudrock-UI.</p>
 <h3 id="protect_user_details_for_registration_methods">PROTECT_USER_DETAILS_FOR_REGISTRATION_METHODS</h3>
 <p>Type: List[str]</p>
 <p>List of authentication methods which are not allowed to update user details.</p>
@@ -6328,10 +6328,10 @@
 <p>Indicates whether user can see all other users in <code>api/users/</code> endpoint.</p>
 <h3 id="sidebar_logo">SIDEBAR_LOGO</h3>
 <p>Type: Optional[str]</p>
-<p>Relative path to image rendered at the top of sidebar menu in UI.</p>
+<p>Relative path to image rendered at the top of sidebar menu in Cloudrock-UI.</p>
 <h3 id="sidebar_logo_mobile">SIDEBAR_LOGO_MOBILE</h3>
 <p>Type: Optional[str]</p>
-<p>Relative path to image rendered at the top of mobile sidebar menu in UI.</p>
+<p>Relative path to image rendered at the top of mobile sidebar menu in Cloudrock-UI.</p>
 <h3 id="site_address">SITE_ADDRESS</h3>
 <p>Type: str</p>
 <p>It is used in marketplace order header.</p>
@@ -6364,10 +6364,10 @@
 <p>Identifier of translation domain applied to current deployment.</p>
 <h3 id="user_mandatory_fields">USER_MANDATORY_FIELDS</h3>
 <p>Type: List[str]</p>
-<p>List of user profile attributes that would be required for filling in UI. Note that backend will not be affected. If a mandatory field is missing in profile, a profile edit view will be forced upon user on any UI logged in action. Possible values are: description, email, full_name, job_title, organization, phone_number</p>
+<p>List of user profile attributes that would be required for filling in Cloudrock-UI. Note that backend will not be affected. If a mandatory field is missing in profile, a profile edit view will be forced upon user on any Cloudrock-UI logged in action. Possible values are: description, email, full_name, job_title, organization, phone_number</p>
 <h3 id="user_registration_hidden_fields">USER_REGISTRATION_HIDDEN_FIELDS</h3>
 <p>Type: List[str]</p>
-<p>List of user profile attributes that would be concealed on registration form in UI. Possible values are: job_title, registration_method, phone_number</p>
+<p>List of user profile attributes that would be concealed on registration form in Cloudrock-UI. Possible values are: job_title, registration_method, phone_number</p>
 <h3 id="use_atomic_transaction">USE_ATOMIC_TRANSACTION</h3>
 <p>Type: bool</p>
 <p>Wrap action views in atomic transaction.</p>
@@ -6900,7 +6900,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022 Cloudrock team
+      Copyright &copy; 2016 - 2021 Cloudrock team
     </div>
   
   
