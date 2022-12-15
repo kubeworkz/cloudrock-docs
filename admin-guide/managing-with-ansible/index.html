@@ -74,7 +74,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="brown" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="">
   
     
     
@@ -866,6 +866,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../deployment/helm/docs/ip-whitelisting/" class="md-nav__link">
+        Limiting network access to Metal APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../deployment/helm/docs/kubectl/" class="md-nav__link">
         Official documentation
       </a>
@@ -908,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment/helm/docs/mastermind-templates/" class="md-nav__link">
+      <a href="../deployment/helm/docs/metal-templates/" class="md-nav__link">
         Metal templates configuration
       </a>
     </li>
@@ -1254,7 +1268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/cli-guide/" class="md-nav__link">
+      <a href="../metal-configuration/cli-guide/" class="md-nav__link">
         CLI guide
       </a>
     </li>
@@ -1268,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/configuration-guide/" class="md-nav__link">
+      <a href="../metal-configuration/configuration-guide/" class="md-nav__link">
         Configuration guide
       </a>
     </li>
@@ -1282,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/features/" class="md-nav__link">
+      <a href="../metal-configuration/features/" class="md-nav__link">
         Features
       </a>
     </li>
@@ -1296,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/general/" class="md-nav__link">
+      <a href="../metal-configuration/general/" class="md-nav__link">
         General Configuration
       </a>
     </li>
@@ -1310,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/google-calendar/" class="md-nav__link">
+      <a href="../metal-configuration/google-calendar/" class="md-nav__link">
         Configuration of the Google Calendar
       </a>
     </li>
@@ -1324,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/notification-templates/" class="md-nav__link">
+      <a href="../metal-configuration/notification-templates/" class="md-nav__link">
         Overriding notification templates via admin panel
       </a>
     </li>
@@ -1338,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/notifications/" class="md-nav__link">
+      <a href="../metal-configuration/notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1352,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mastermind-configuration/templates/" class="md-nav__link">
+      <a href="../metal-configuration/templates/" class="md-nav__link">
         Message templates
       </a>
     </li>
@@ -2583,7 +2597,7 @@ that have purchased support packages.</p>
 <p>Upgrading Cloudrock to a new version is achieved by following the checklist:</p>
 <ol>
 <li>Update deployment-specific variables for the new version in <code>groups_vars/&lt;deployment_id&gt;/vars</code> and <code>groups_vars/&lt;deployment_id&gt;/vault</code> (if setting is private).</li>
-<li>Update target version in <code>groups_vars/&lt;deployment_id&gt;/vars</code>: set <code>cloudrock_cloudrock-ui_version</code> and <code>cloudrock_mastermind_version</code> to a new version of the Cloudrock release.</li>
+<li>Update target version in <code>groups_vars/&lt;deployment_id&gt;/vars</code>: set <code>cloudrock_cloudrock-ui_version</code> and <code>cloudrock_metal_version</code> to a new version of the Cloudrock release.</li>
 <li>Run <code>ansible-playbook -DC &lt;deployment_id.yml&gt;</code> to check what installer will do during the upgrade.</li>
 <li>Run <code>ansible-playbook -D &lt;deployment_id.yml&gt;</code> to perform an upgrade.</li>
 </ol>
@@ -2621,7 +2635,7 @@ that have purchased support packages.</p>
 <li><code>values.yaml</code> -&gt; <code>roles/cloudrock_helm/files/cloudrock_helm/cloudrock/</code></li>
 <li>Files related to TLS -&gt; <code>deployments/&lt;deployment_id&gt;/tls/</code></li>
 <li>Files related to white-labeling -&gt; <code>deployments/&lt;deployment_id&gt;/whitelabeling/</code></li>
-<li>Files related to mastermind templates -&gt; <code>deployments/&lt;deployment_id&gt;/mastermind_templates/</code></li>
+<li>Files related to metal templates -&gt; <code>deployments/&lt;deployment_id&gt;/metal_templates/</code></li>
 <li>Files related to stress testing -&gt; <code>deployments/&lt;deployment_id&gt;/locust_tasks/</code></li>
 <li>Files related to SAML2 -&gt; <code>deployments/&lt;deployment_id&gt;/cloudrock_saml2/</code></li>
 </ul>
@@ -2629,7 +2643,7 @@ that have purchased support packages.</p>
 <ul>
 <li><a href="https://github.com/kubeworkz/cloudrock-helm/blob/master/docs/tls-config.md">TLS</a></li>
 <li><a href="https://github.com/kubeworkz/cloudrock-helm/blob/master/docs/whitelabeling.md">White-labeling</a></li>
-<li><a href="https://github.com/kubeworkz/cloudrock-helm/blob/master/docs/mastermind-templates.md">Metal templates</a></li>
+<li><a href="https://github.com/kubeworkz/cloudrock-helm/blob/master/docs/metal-templates.md">Metal templates</a></li>
 </ul>
 
   <hr>
@@ -2637,7 +2651,7 @@ that have purchased support packages.</p>
   <small>
     
       Last update:
-      2022-09-17
+      2022-09-19
     
   </small>
 </div>

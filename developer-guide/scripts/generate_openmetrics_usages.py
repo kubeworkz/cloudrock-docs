@@ -6,13 +6,13 @@ The output of the script is a set of files each of which named `<month>-metrics.
 
 If you need, you can include kubernetes-related metadata to the output, for example:
 cluster="kubernetes",component="services",
-environment="skylark",instance="kubernetes.cloudrock.ca:6443",
+environment="skylark",instance="kubernetes.hpc.ut.ee:6443",
 job="kubernetes-services",namespace="default",tenant="HPC"
 """
 
 import calendar
 from datetime import date, datetime, timedelta
-from cloudrock_mastermind.marketplace import models as mm
+from cloudrock_metal.marketplace import models as mm
 from cloudrock_core.core import utils as core_utils
 from django.db.models.aggregates import Sum
 

@@ -8,7 +8,7 @@ The content of the file should be csv formatted as:
 "<UUID>","<USAGE AMOUNT>","<USAGE AMOUNT>","<USAGE AMOUNT>"
 """
 
-from cloudrock_mastermind.marketplace import models as mm
+from cloudrock_metal.marketplace import models as mm
 from cloudrock_core.core import utils as core_utils
 import csv
 from datetime import date
