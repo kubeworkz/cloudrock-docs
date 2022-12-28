@@ -70,7 +70,7 @@
         {
           "expr": "cloudrock_customers_total",
           "interval": "",
-          "legendFormat": "Organisations",
+          "legendFormat": "Organizations",
           "refId": "A"
         },
         {
