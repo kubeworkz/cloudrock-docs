@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../../identities/summary/">
+      
+      
+        <link rel="next" href="../configuration-guide/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2981,6 +2982,7 @@
                   
 
 
+
 <h1 id="cli-guide">CLI guide</h1>
 <h2 id="clean_settings_cache">clean_settings_cache</h2>
 <p>Clean API configuration settings cache.</p>
@@ -2992,11 +2994,11 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock copy_category source_category_uuid target_category_uuid
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>copy_category<span class="w"> </span>source_category_uuid<span class="w"> </span>target_category_uuid
 
-positional arguments:
-  source_category_uuid  UUID of a category to copy metadata from
-  target_category_uuid  UUID of a category to copy metadata to
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>source_category_uuid<span class="w">  </span>UUID<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>category<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>metadata<span class="w"> </span>from
+<span class="w">  </span>target_category_uuid<span class="w">  </span>UUID<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>category<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>metadata<span class="w"> </span>to
 </code></pre></div></td></tr></table></div>
 <h2 id="createstaffuser">createstaffuser</h2>
 <p>Create a user with a specified username and password. User will be created as staff.</p>
@@ -3005,12 +3007,12 @@ positional arguments:
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock createstaffuser -u USERNAME -p PASSWORD -e EMAIL
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>createstaffuser<span class="w"> </span>-u<span class="w"> </span>USERNAME<span class="w"> </span>-p<span class="w"> </span>PASSWORD<span class="w"> </span>-e<span class="w"> </span>EMAIL
 
-optional arguments:
-  -u USERNAME, --username USERNAME
-  -p PASSWORD, --password PASSWORD
-  -e EMAIL, --email EMAIL
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-u<span class="w"> </span>USERNAME,<span class="w"> </span>--username<span class="w"> </span>USERNAME
+<span class="w">  </span>-p<span class="w"> </span>PASSWORD,<span class="w"> </span>--password<span class="w"> </span>PASSWORD
+<span class="w">  </span>-e<span class="w"> </span>EMAIL,<span class="w"> </span>--email<span class="w"> </span>EMAIL
 </code></pre></div></td></tr></table></div>
 <h2 id="drfdocs">drfdocs</h2>
 <p>Generate RST docs for DRF API</p>
@@ -3021,14 +3023,14 @@ optional arguments:
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock drfdocs <span class="o">[</span>--store PATH<span class="o">]</span> <span class="o">[</span>app_label <span class="o">[</span>app_label ...<span class="o">]]</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>drfdocs<span class="w"> </span><span class="o">[</span>--store<span class="w"> </span>PATH<span class="o">]</span><span class="w"> </span><span class="o">[</span>app_label<span class="w"> </span><span class="o">[</span>app_label<span class="w"> </span>...<span class="o">]]</span>
 
-positional arguments:
-  app_label             Application label.
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>app_label<span class="w">             </span>Application<span class="w"> </span>label.
 
-optional arguments:
-  --store PATH, -s PATH
-                        Where to store docs.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--store<span class="w"> </span>PATH,<span class="w"> </span>-s<span class="w"> </span>PATH
+<span class="w">                        </span>Where<span class="w"> </span>to<span class="w"> </span>store<span class="w"> </span>docs.
 </code></pre></div></td></tr></table></div>
 <h2 id="drop_leftover_openstack_projects">drop_leftover_openstack_projects</h2>
 <p>Drop leftover projects from remote OpenStack deployment.
@@ -3042,15 +3044,15 @@ optional arguments:
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock drop_leftover_openstack_projects <span class="o">[</span>--offering OFFERING<span class="o">]</span>
-                                               <span class="o">[</span>--dry-run<span class="o">]</span> <span class="o">[</span>--fuzzy-matching<span class="o">]</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>drop_leftover_openstack_projects<span class="w"> </span><span class="o">[</span>--offering<span class="w"> </span>OFFERING<span class="o">]</span>
+<span class="w">                                               </span><span class="o">[</span>--dry-run<span class="o">]</span><span class="w"> </span><span class="o">[</span>--fuzzy-matching<span class="o">]</span>
 
-optional arguments:
-  --offering OFFERING  Target marketplace offering name where leftover
-                       projects are located.
-  --dry-run            Don<span class="err">&#39;</span>t make any changes, instead show what projects
-                       would be deleted.
-  --fuzzy-matching     Try to detect leftovers by name.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--offering<span class="w"> </span>OFFERING<span class="w">  </span>Target<span class="w"> </span>marketplace<span class="w"> </span>offering<span class="w"> </span>name<span class="w"> </span>where<span class="w"> </span>leftover
+<span class="w">                       </span>projects<span class="w"> </span>are<span class="w"> </span>located.
+<span class="w">  </span>--dry-run<span class="w">            </span>Don<span class="err">&#39;</span>t<span class="w"> </span>make<span class="w"> </span>any<span class="w"> </span>changes,<span class="w"> </span>instead<span class="w"> </span>show<span class="w"> </span>what<span class="w"> </span>projects
+<span class="w">                       </span>would<span class="w"> </span>be<span class="w"> </span>deleted.
+<span class="w">  </span>--fuzzy-matching<span class="w">     </span>Try<span class="w"> </span>to<span class="w"> </span>detect<span class="w"> </span>leftovers<span class="w"> </span>by<span class="w"> </span>name.
 </code></pre></div></td></tr></table></div>
 <h2 id="dumpusers">dumpusers</h2>
 <p>Dumps information about users, their organizations and projects.</p>
@@ -3059,12 +3061,12 @@ optional arguments:
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock dumpusers <span class="o">[</span>-o OUTPUT<span class="o">]</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>dumpusers<span class="w"> </span><span class="o">[</span>-o<span class="w"> </span>OUTPUT<span class="o">]</span>
 
-optional arguments:
-  -o OUTPUT, --output OUTPUT
-                        Specifies file to which the output is written. The
-                        output will be printed to stdout by default.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-o<span class="w"> </span>OUTPUT,<span class="w"> </span>--output<span class="w"> </span>OUTPUT
+<span class="w">                        </span>Specifies<span class="w"> </span>file<span class="w"> </span>to<span class="w"> </span>which<span class="w"> </span>the<span class="w"> </span>output<span class="w"> </span>is<span class="w"> </span>written.<span class="w"> </span>The
+<span class="w">                        </span>output<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>printed<span class="w"> </span>to<span class="w"> </span>stdout<span class="w"> </span>by<span class="w"> </span>default.
 </code></pre></div></td></tr></table></div>
 <h2 id="export_ami_catalog">export_ami_catalog</h2>
 <p>Export catalog of Amazon images.</p>
@@ -3076,13 +3078,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock export_offering -o OFFERING -p PATH
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>export_offering<span class="w"> </span>-o<span class="w"> </span>OFFERING<span class="w"> </span>-p<span class="w"> </span>PATH
 
-optional arguments:
-  -o OFFERING, --offering OFFERING
-                        An offering UUID.
-  -p PATH, --path PATH  Path to the folder where the <span class="nb">export</span> data will be
-                        saved.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-o<span class="w"> </span>OFFERING,<span class="w"> </span>--offering<span class="w"> </span>OFFERING
+<span class="w">                        </span>An<span class="w"> </span>offering<span class="w"> </span>UUID.
+<span class="w">  </span>-p<span class="w"> </span>PATH,<span class="w"> </span>--path<span class="w"> </span>PATH<span class="w">  </span>Path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>folder<span class="w"> </span>where<span class="w"> </span>the<span class="w"> </span><span class="nb">export</span><span class="w"> </span>data<span class="w"> </span>will<span class="w"> </span>be
+<span class="w">                        </span>saved.
 </code></pre></div></td></tr></table></div>
 <h2 id="import_ami_catalog">import_ami_catalog</h2>
 <p>Import catalog of Amazon images.</p>
@@ -3092,13 +3094,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock import_ami_catalog <span class="o">[</span>-y<span class="o">]</span> FILE
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>import_ami_catalog<span class="w"> </span><span class="o">[</span>-y<span class="o">]</span><span class="w"> </span>FILE
 
-positional arguments:
-  FILE       AMI catalog file.
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>FILE<span class="w">       </span>AMI<span class="w"> </span>catalog<span class="w"> </span>file.
 
-optional arguments:
-  -y, --yes  The answer to any question which would be asked will be yes.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-y,<span class="w"> </span>--yes<span class="w">  </span>The<span class="w"> </span>answer<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>question<span class="w"> </span>which<span class="w"> </span>would<span class="w"> </span>be<span class="w"> </span>asked<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>yes.
 </code></pre></div></td></tr></table></div>
 <h2 id="import_azure_image">import_azure_image</h2>
 <p>Import Azure image</p>
@@ -3108,13 +3110,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock import_azure_image <span class="o">[</span>--sku SKU<span class="o">]</span> <span class="o">[</span>--publisher PUBLISHER<span class="o">]</span>
-                                 <span class="o">[</span>--offer OFFER<span class="o">]</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>import_azure_image<span class="w"> </span><span class="o">[</span>--sku<span class="w"> </span>SKU<span class="o">]</span><span class="w"> </span><span class="o">[</span>--publisher<span class="w"> </span>PUBLISHER<span class="o">]</span>
+<span class="w">                                 </span><span class="o">[</span>--offer<span class="w"> </span>OFFER<span class="o">]</span>
 
-optional arguments:
-  --sku SKU
-  --publisher PUBLISHER
-  --offer OFFER
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--sku<span class="w"> </span>SKU
+<span class="w">  </span>--publisher<span class="w"> </span>PUBLISHER
+<span class="w">  </span>--offer<span class="w"> </span>OFFER
 </code></pre></div></td></tr></table></div>
 <h2 id="import_marketplace_orders">import_marketplace_orders</h2>
 <p>Create marketplace order for each resource if it does not yet exist.</p>
@@ -3130,17 +3132,17 @@ optional arguments:
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock import_offering -p PATH <span class="o">[</span>-c CUSTOMER<span class="o">]</span> <span class="o">[</span>-ct CATEGORY<span class="o">]</span>
-                              <span class="o">[</span>-o OFFERING<span class="o">]</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>import_offering<span class="w"> </span>-p<span class="w"> </span>PATH<span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CUSTOMER<span class="o">]</span><span class="w"> </span><span class="o">[</span>-ct<span class="w"> </span>CATEGORY<span class="o">]</span>
+<span class="w">                              </span><span class="o">[</span>-o<span class="w"> </span>OFFERING<span class="o">]</span>
 
-optional arguments:
-  -p PATH, --path PATH  File path to offering data.
-  -c CUSTOMER, --customer CUSTOMER
-                        Customer UUID.
-  -ct CATEGORY, --category CATEGORY
-                        Category UUID.
-  -o OFFERING, --offering OFFERING
-                        Updated offering UUID.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-p<span class="w"> </span>PATH,<span class="w"> </span>--path<span class="w"> </span>PATH<span class="w">  </span>File<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>offering<span class="w"> </span>data.
+<span class="w">  </span>-c<span class="w"> </span>CUSTOMER,<span class="w"> </span>--customer<span class="w"> </span>CUSTOMER
+<span class="w">                        </span>Customer<span class="w"> </span>UUID.
+<span class="w">  </span>-ct<span class="w"> </span>CATEGORY,<span class="w"> </span>--category<span class="w"> </span>CATEGORY
+<span class="w">                        </span>Category<span class="w"> </span>UUID.
+<span class="w">  </span>-o<span class="w"> </span>OFFERING,<span class="w"> </span>--offering<span class="w"> </span>OFFERING
+<span class="w">                        </span>Updated<span class="w"> </span>offering<span class="w"> </span>UUID.
 </code></pre></div></td></tr></table></div>
 <h2 id="import_tenant_quotas">import_tenant_quotas</h2>
 <p>Import OpenStack tenant quotas to marketplace.</p>
@@ -3148,11 +3150,11 @@ optional arguments:
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock import_tenant_quotas <span class="o">[</span>--dry-run<span class="o">]</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>import_tenant_quotas<span class="w"> </span><span class="o">[</span>--dry-run<span class="o">]</span>
 
-optional arguments:
-  --dry-run  Don<span class="err">&#39;</span>t make any changes, instead show what objects would be
-             created.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--dry-run<span class="w">  </span>Don<span class="err">&#39;</span>t<span class="w"> </span>make<span class="w"> </span>any<span class="w"> </span>changes,<span class="w"> </span>instead<span class="w"> </span>show<span class="w"> </span>what<span class="w"> </span>objects<span class="w"> </span>would<span class="w"> </span>be
+<span class="w">             </span>created.
 </code></pre></div></td></tr></table></div>
 <h2 id="init_marketplace_support">init_marketplace_support</h2>
 <p>Import existing support offerings as marketplace resources.</p>
@@ -3163,14 +3165,14 @@ optional arguments:
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock init_marketplace_support --category CATEGORY_UUID --customer
-                                       CUSTOMER_UUID
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>init_marketplace_support<span class="w"> </span>--category<span class="w"> </span>CATEGORY_UUID<span class="w"> </span>--customer
+<span class="w">                                       </span>CUSTOMER_UUID
 
-optional arguments:
-  --category CATEGORY_UUID
-                        Specify a category to create offerings.
-  --customer CUSTOMER_UUID
-                        Specify a customer to create offerings.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--category<span class="w"> </span>CATEGORY_UUID
+<span class="w">                        </span>Specify<span class="w"> </span>a<span class="w"> </span>category<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>offerings.
+<span class="w">  </span>--customer<span class="w"> </span>CUSTOMER_UUID
+<span class="w">                        </span>Specify<span class="w"> </span>a<span class="w"> </span>customer<span class="w"> </span>to<span class="w"> </span>create<span class="w"> </span>offerings.
 </code></pre></div></td></tr></table></div>
 <h2 id="initglobalquotashistory">initglobalquotashistory</h2>
 <p>Recalculate all quotas</p>
@@ -3179,20 +3181,20 @@ optional arguments:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock initsecuritygroups names <span class="o">[</span>names ...<span class="o">]</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>initsecuritygroups<span class="w"> </span>names<span class="w"> </span><span class="o">[</span>names<span class="w"> </span>...<span class="o">]</span>
 
-positional arguments:
-  names
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>names
 </code></pre></div></td></tr></table></div>
 <h2 id="load_categories">load_categories</h2>
 <p>Loads a categories for the Marketplace</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock load_categories category <span class="o">[</span>category ...<span class="o">]</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>load_categories<span class="w"> </span>category<span class="w"> </span><span class="o">[</span>category<span class="w"> </span>...<span class="o">]</span>
 
-positional arguments:
-  category  List of categories to load
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>category<span class="w">  </span>List<span class="w"> </span>of<span class="w"> </span>categories<span class="w"> </span>to<span class="w"> </span>load
 </code></pre></div></td></tr></table></div>
 <h2 id="load_features">load_features</h2>
 <p>Import features in JSON format</p>
@@ -3203,24 +3205,24 @@ positional arguments:
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock load_features <span class="o">[</span>--dry-run<span class="o">]</span> features_file
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>load_features<span class="w"> </span><span class="o">[</span>--dry-run<span class="o">]</span><span class="w"> </span>features_file
 
-positional arguments:
-  features_file  Specifies location of features file.
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>features_file<span class="w">  </span>Specifies<span class="w"> </span>location<span class="w"> </span>of<span class="w"> </span>features<span class="w"> </span>file.
 
-optional arguments:
-  --dry-run      Don<span class="err">&#39;</span>t make any changes, instead show what objects would be
-                 created.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--dry-run<span class="w">      </span>Don<span class="err">&#39;</span>t<span class="w"> </span>make<span class="w"> </span>any<span class="w"> </span>changes,<span class="w"> </span>instead<span class="w"> </span>show<span class="w"> </span>what<span class="w"> </span>objects<span class="w"> </span>would<span class="w"> </span>be
+<span class="w">                 </span>created.
 </code></pre></div></td></tr></table></div>
 <h2 id="load_notifications">load_notifications</h2>
 <p>Import notifications to DB</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock load_notifications notifications_file
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>load_notifications<span class="w"> </span>notifications_file
 
-positional arguments:
-  notifications_file  Specifies location of notifications file.
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>notifications_file<span class="w">  </span>Specifies<span class="w"> </span>location<span class="w"> </span>of<span class="w"> </span>notifications<span class="w"> </span>file.
 </code></pre></div></td></tr></table></div>
 <h2 id="load_user_agreements">load_user_agreements</h2>
 <p>Imports privacy policy and terms of service into DB</p>
@@ -3231,14 +3233,14 @@ positional arguments:
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock load_user_agreements <span class="o">[</span>-tos TOS<span class="o">]</span> <span class="o">[</span>-pp PP<span class="o">]</span> <span class="o">[</span>-f FORCE<span class="o">]</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>load_user_agreements<span class="w"> </span><span class="o">[</span>-tos<span class="w"> </span>TOS<span class="o">]</span><span class="w"> </span><span class="o">[</span>-pp<span class="w"> </span>PP<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FORCE<span class="o">]</span>
 
-optional arguments:
-  -tos TOS, --tos TOS   Path to a Terms of service file
-  -pp PP, --pp PP       Path to a Privacy policy file
-  -f FORCE, --force FORCE
-                        This flag means force loading agreements even <span class="k">if</span> they
-                        are already defined <span class="k">in</span> DB.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-tos<span class="w"> </span>TOS,<span class="w"> </span>--tos<span class="w"> </span>TOS<span class="w">   </span>Path<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>Terms<span class="w"> </span>of<span class="w"> </span>service<span class="w"> </span>file
+<span class="w">  </span>-pp<span class="w"> </span>PP,<span class="w"> </span>--pp<span class="w"> </span>PP<span class="w">       </span>Path<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>Privacy<span class="w"> </span>policy<span class="w"> </span>file
+<span class="w">  </span>-f<span class="w"> </span>FORCE,<span class="w"> </span>--force<span class="w"> </span>FORCE
+<span class="w">                        </span>This<span class="w"> </span>flag<span class="w"> </span>means<span class="w"> </span>force<span class="w"> </span>loading<span class="w"> </span>agreements<span class="w"> </span>even<span class="w"> </span><span class="k">if</span><span class="w"> </span>they
+<span class="w">                        </span>are<span class="w"> </span>already<span class="w"> </span>defined<span class="w"> </span><span class="k">in</span><span class="w"> </span>DB.
 </code></pre></div></td></tr></table></div>
 <h2 id="move_project">move_project</h2>
 <p>Move Cloudrock project to a different organization.</p>
@@ -3248,13 +3250,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock move_project -p PROJECT_UUID -c CUSTOMER_UUID
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>move_project<span class="w"> </span>-p<span class="w"> </span>PROJECT_UUID<span class="w"> </span>-c<span class="w"> </span>CUSTOMER_UUID
 
-optional arguments:
-  -p PROJECT_UUID, --project PROJECT_UUID
-                        UUID of a project to move.
-  -c CUSTOMER_UUID, --customer CUSTOMER_UUID
-                        Target organization UUID
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-p<span class="w"> </span>PROJECT_UUID,<span class="w"> </span>--project<span class="w"> </span>PROJECT_UUID
+<span class="w">                        </span>UUID<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>project<span class="w"> </span>to<span class="w"> </span>move.
+<span class="w">  </span>-c<span class="w"> </span>CUSTOMER_UUID,<span class="w"> </span>--customer<span class="w"> </span>CUSTOMER_UUID
+<span class="w">                        </span>Target<span class="w"> </span>organization<span class="w"> </span>UUID
 </code></pre></div></td></tr></table></div>
 <h2 id="move_resource">move_resource</h2>
 <p>Move a marketplace resource to a different project.</p>
@@ -3264,13 +3266,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock move_resource -p PROJECT_UUID -r RESOURCE_UUID
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>move_resource<span class="w"> </span>-p<span class="w"> </span>PROJECT_UUID<span class="w"> </span>-r<span class="w"> </span>RESOURCE_UUID
 
-optional arguments:
-  -p PROJECT_UUID, --project PROJECT_UUID
-                        Target project UUID
-  -r RESOURCE_UUID, --resource RESOURCE_UUID
-                        UUID of a marketplace resource to move.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-p<span class="w"> </span>PROJECT_UUID,<span class="w"> </span>--project<span class="w"> </span>PROJECT_UUID
+<span class="w">                        </span>Target<span class="w"> </span>project<span class="w"> </span>UUID
+<span class="w">  </span>-r<span class="w"> </span>RESOURCE_UUID,<span class="w"> </span>--resource<span class="w"> </span>RESOURCE_UUID
+<span class="w">                        </span>UUID<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>marketplace<span class="w"> </span>resource<span class="w"> </span>to<span class="w"> </span>move.
 </code></pre></div></td></tr></table></div>
 <h2 id="override_templates">override_templates</h2>
 <p>Override templates</p>
@@ -3282,25 +3284,25 @@ optional arguments:
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock override_templates <span class="o">[</span>-c CLEAN<span class="o">]</span> templates_file
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>override_templates<span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CLEAN<span class="o">]</span><span class="w"> </span>templates_file
 
-positional arguments:
-  templates_file        Specifies location of templates file.
+positional<span class="w"> </span>arguments:
+<span class="w">  </span>templates_file<span class="w">        </span>Specifies<span class="w"> </span>location<span class="w"> </span>of<span class="w"> </span>templates<span class="w"> </span>file.
 
-optional arguments:
-  -c CLEAN, --clean CLEAN
-                        This flag means total synchronization with the
-                        template file you pass.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>-c<span class="w"> </span>CLEAN,<span class="w"> </span>--clean<span class="w"> </span>CLEAN
+<span class="w">                        </span>This<span class="w"> </span>flag<span class="w"> </span>means<span class="w"> </span>total<span class="w"> </span>synchronization<span class="w"> </span>with<span class="w"> </span>the
+<span class="w">                        </span>template<span class="w"> </span>file<span class="w"> </span>you<span class="w"> </span>pass.
 </code></pre></div></td></tr></table></div>
 <h2 id="pgmigrate">pgmigrate</h2>
 <p>Load data with disabled signals.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock pgmigrate <span class="o">[</span>--path PATH<span class="o">]</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>pgmigrate<span class="w"> </span><span class="o">[</span>--path<span class="w"> </span>PATH<span class="o">]</span>
 
-optional arguments:
-  --path PATH, -p PATH  Path to dumped database.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--path<span class="w"> </span>PATH,<span class="w"> </span>-p<span class="w"> </span>PATH<span class="w">  </span>Path<span class="w"> </span>to<span class="w"> </span>dumped<span class="w"> </span>database.
 </code></pre></div></td></tr></table></div>
 <h2 id="print_notifications">print_notifications</h2>
 <h2 id="pull_openstack_volume_metadata">pull_openstack_volume_metadata</h2>
@@ -3309,11 +3311,11 @@ optional arguments:
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock pull_openstack_volume_metadata <span class="o">[</span>--dry-run<span class="o">]</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>pull_openstack_volume_metadata<span class="w"> </span><span class="o">[</span>--dry-run<span class="o">]</span>
 
-optional arguments:
-  --dry-run  Don<span class="err">&#39;</span>t make any changes, instead show what objects would be
-             created.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--dry-run<span class="w">  </span>Don<span class="err">&#39;</span>t<span class="w"> </span>make<span class="w"> </span>any<span class="w"> </span>changes,<span class="w"> </span>instead<span class="w"> </span>show<span class="w"> </span>what<span class="w"> </span>objects<span class="w"> </span>would<span class="w"> </span>be
+<span class="w">             </span>created.
 </code></pre></div></td></tr></table></div>
 <h2 id="pull_support_priorities">pull_support_priorities</h2>
 <p>Pull priorities from support backend.</p>
@@ -3325,11 +3327,11 @@ optional arguments:
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock push_tenant_quotas <span class="o">[</span>--dry-run<span class="o">]</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>push_tenant_quotas<span class="w"> </span><span class="o">[</span>--dry-run<span class="o">]</span>
 
-optional arguments:
-  --dry-run  Don<span class="err">&#39;</span>t make any changes, instead show what objects would be
-             created.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--dry-run<span class="w">  </span>Don<span class="err">&#39;</span>t<span class="w"> </span>make<span class="w"> </span>any<span class="w"> </span>changes,<span class="w"> </span>instead<span class="w"> </span>show<span class="w"> </span>what<span class="w"> </span>objects<span class="w"> </span>would<span class="w"> </span>be
+<span class="w">             </span>created.
 </code></pre></div></td></tr></table></div>
 <h2 id="rebuild_billing">rebuild_billing</h2>
 <p>Create or update price estimates based on invoices.</p>
@@ -3345,13 +3347,13 @@ optional arguments:
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage: cloudrock status <span class="o">[</span>--check-api-endpoints-at BASE_URL<span class="o">]</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>usage:<span class="w"> </span>cloudrock<span class="w"> </span>status<span class="w"> </span><span class="o">[</span>--check-api-endpoints-at<span class="w"> </span>BASE_URL<span class="o">]</span>
 
-optional arguments:
-  --check-api-endpoints-at BASE_URL
-                        Runs API endpoints check at specified base URL <span class="o">(</span>i.e.
-                        http://example.com<span class="o">)</span>. If this argument is not provided,
-                        check will be skipped.
+optional<span class="w"> </span>arguments:
+<span class="w">  </span>--check-api-endpoints-at<span class="w"> </span>BASE_URL
+<span class="w">                        </span>Runs<span class="w"> </span>API<span class="w"> </span>endpoints<span class="w"> </span>check<span class="w"> </span>at<span class="w"> </span>specified<span class="w"> </span>base<span class="w"> </span>URL<span class="w"> </span><span class="o">(</span>i.e.
+<span class="w">                        </span>http://example.com<span class="o">)</span>.<span class="w"> </span>If<span class="w"> </span>this<span class="w"> </span>argument<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>provided,
+<span class="w">                        </span>check<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>skipped.
 </code></pre></div></td></tr></table></div>
 <h2 id="switching_backend_server">switching_backend_server</h2>
 <p>Backend data update if a server was switched.</p>
@@ -3385,42 +3387,6 @@ optional arguments:
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../identities/summary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Summary" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Summary
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../configuration-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration guide" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Configuration guide
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -3446,14 +3412,13 @@ optional arguments:
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../docker-compose/">
+      
+      
+        <link rel="next" href="docs/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2563,6 +2564,7 @@
                   
 
 
+
 <h1 id="cloudrock-helm">Cloudrock Helm</h1>
 <p>Cloudrock is a platform for creating hybrid cloud solutions.
 It allows building enterprise-grade systems and
@@ -2581,13 +2583,13 @@ on a Kubernetes cluster using the <a href="https://helm.sh">Helm</a> package man
 <li>Clone <a href="https://github.com/kubeworkz/cloudrock-helm">cloudrock-helm repository</a></li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  git clone https://github.com/kubeworkz/cloudrock-helm.git
-  <span class="nb">cd</span> cloudrock-helm
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/kubeworkz/cloudrock-helm.git
+<span class="w">  </span><span class="nb">cd</span><span class="w"> </span>cloudrock-helm
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Add the stable repository</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  helm repo add stable https://charts.helm.sh/stable
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stable<span class="w"> </span>https://charts.helm.sh/stable
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>
@@ -2606,7 +2608,7 @@ on a Kubernetes cluster using the <a href="https://helm.sh">Helm</a> package man
 <p>Install Helm package:</p>
 </li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  helm install cloudrock cloudrock
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>install<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock
 </code></pre></div></td></tr></table></div>
 <p><strong>NB</strong> After this command, Cloudrock release will run in <code>default</code> namespace.
 Please, pay attention in which namespace which release is running.</p>
@@ -2615,12 +2617,12 @@ in <code>test</code> namespace in the following way:</p>
 <ol>
 <li>Create <code>test</code> namespace:</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  kubectl create namespace <span class="nb">test</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span><span class="nb">test</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Install release:</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  helm install cloudrock cloudrock --namespace <span class="nb">test</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>install<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock<span class="w"> </span>--namespace<span class="w"> </span><span class="nb">test</span>
 </code></pre></div></td></tr></table></div>
 <p>However, postgresql release and cloudrock should be installed
 in the same namespace in order to share a common secret with DB credentials.</p>
@@ -2631,42 +2633,42 @@ in the same namespace in order to share a common secret with DB credentials.</p>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Example:</span>
-  kubectl get pods -A <span class="p">|</span> grep cloudrock-metal-worker <span class="c1"># --&gt;</span>
-  <span class="c1"># default cloudrock-metal-worker-6d98cd98bd-wps8n 1/1 Running 0 9m9s</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Example:</span>
+<span class="w">  </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span><span class="c1"># --&gt;</span>
+<span class="w">  </span><span class="c1"># default cloudrock-metal-worker-6d98cd98bd-wps8n 1/1 Running 0 9m9s</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Connect to pod via shell</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Example:</span>
-  kubectl <span class="nb">exec</span> -it cloudrock-metal-worker-6d98cd98bd-wps8n -- /bin/bash
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Example:</span>
+<span class="w">  </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>cloudrock-metal-worker-6d98cd98bd-wps8n<span class="w"> </span>--<span class="w"> </span>/bin/bash
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Execute command to add admin user</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  cloudrock createstaffuser -u user -p password -e admin@example.com
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>cloudrock<span class="w"> </span>createstaffuser<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>-p<span class="w"> </span>password<span class="w"> </span>-e<span class="w"> </span>admin@example.com
 </code></pre></div></td></tr></table></div>
 <h2 id="cloudrock-helm-chart-release-upgrading">Cloudrock Helm chart release upgrading</h2>
 <p>Delete initdb job (if exists):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  kubectl delete job cloudrock-metal-initdb-job <span class="o">||</span> <span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w"> </span>cloudrock-metal-initdb-job<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 <p>Delete load features job (if exists):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  kubectl delete job load-features-job <span class="o">||</span> <span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>kubectl<span class="w"> </span>delete<span class="w"> </span>job<span class="w"> </span>load-features-job<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 <p>Upgrade Cloudrock dependencies and release:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  helm dep update cloudrock/
-  helm upgrade cloudrock cloudrock/
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>dep<span class="w"> </span>update<span class="w"> </span>cloudrock/
+<span class="w">  </span>helm<span class="w"> </span>upgrade<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock/
 </code></pre></div></td></tr></table></div>
 <p>Restart deployments to apply configmaps changes:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>  kubectl rollout restart deployment cloudrock-metal-beat
-  kubectl rollout restart deployment cloudrock-metal-api
-  kubectl rollout restart deployment cloudrock-metal-worker
-  kubectl rollout restart deployment cloudrock-cloudrock-ui
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>cloudrock-metal-beat
+<span class="w">  </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>cloudrock-metal-api
+<span class="w">  </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>cloudrock-metal-worker
+<span class="w">  </span>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>cloudrock-cloudrock-ui
 </code></pre></div></td></tr></table></div>
 <h2 id="private-registry-setup">Private registry setup</h2>
 <p>A user can use private registry for Docker images.
@@ -2701,42 +2703,6 @@ A secret can be created trough <a href="https://kubernetes.io/docs/tasks/configu
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../docker-compose/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloudrock Docker-compose deployment" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cloudrock Docker-compose deployment
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="docs/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloudrock Helm chart configuration" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cloudrock Helm chart configuration
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2762,14 +2728,13 @@ A secret can be created trough <a href="https://kubernetes.io/docs/tasks/configu
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

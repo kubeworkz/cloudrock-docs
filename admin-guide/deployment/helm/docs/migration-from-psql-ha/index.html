@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../metal-templates/">
+      
+      
+        <link rel="next" href="../minikube/">
+      
       <link rel="icon" href="../../../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2435,6 +2436,7 @@
                   
 
 
+
 <h1 id="migration-from-postgresql-ha">Migration from Postgresql HA</h1>
 <p>Plan:</p>
 <ol>
@@ -2459,17 +2461,17 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Backup</span>
-kubectl <span class="nb">exec</span> -it postgresql-ha-cloudrock-postgresql-0 -- env <span class="nv">PGPASSWORD</span><span class="o">=</span>cloudrock pg_dump -h <span class="m">0</span>.0.0.0 -U cloudrock cloudrock <span class="p">|</span> gzip -9 &gt; backup.sql.gz
+kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>postgresql-ha-cloudrock-postgresql-0<span class="w"> </span>--<span class="w"> </span>env<span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>cloudrock<span class="w"> </span>pg_dump<span class="w"> </span>-h<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-U<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-9<span class="w"> </span>&gt;<span class="w"> </span>backup.sql.gz
 
 <span class="c1"># Backup restoration</span>
 <span class="c1"># Locally</span>
-kubectl cp backup.sql.gz postgresql-cloudrock-0:/tmp/backup.sql.gz
-kubectl <span class="nb">exec</span> -it postgresql-cloudrock-0 -- bash
+kubectl<span class="w"> </span>cp<span class="w"> </span>backup.sql.gz<span class="w"> </span>postgresql-cloudrock-0:/tmp/backup.sql.gz
+kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>postgresql-cloudrock-0<span class="w"> </span>--<span class="w"> </span>bash
 
 <span class="c1"># In pgpool pod</span>
-gzip -d /tmp/backup.sql.gz
-<span class="nb">export</span> <span class="nv">PGPASSWORD</span><span class="o">=</span>cloudrock
-psql -U cloudrock -h <span class="m">0</span>.0.0.0 -f /tmp/backup.sql
+gzip<span class="w"> </span>-d<span class="w"> </span>/tmp/backup.sql.gz
+<span class="nb">export</span><span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>cloudrock
+psql<span class="w"> </span>-U<span class="w"> </span>cloudrock<span class="w"> </span>-h<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>-f<span class="w"> </span>/tmp/backup.sql
 </code></pre></div></td></tr></table></div>
 
   <hr>
@@ -2477,7 +2479,7 @@ psql -U cloudrock -h <span class="m">0</span>.0.0.0 -f /tmp/backup.sql
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2496,42 +2498,6 @@ psql -U cloudrock -h <span class="m">0</span>.0.0.0 -f /tmp/backup.sql
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../metal-templates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Metal templates configuration" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Metal templates configuration
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../minikube/" class="md-footer__link md-footer__link--next" aria-label="Next: Official documentation" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Official documentation
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2558,14 +2524,13 @@ psql -U cloudrock -h <span class="m">0</span>.0.0.0 -f /tmp/backup.sql
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

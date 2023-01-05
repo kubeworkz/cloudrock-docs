@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../api/">
+      
+      
+        <link rel="next" href="../permissions/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2491,6 +2492,7 @@
                   
 
 
+
 <h1 id="authentication">Authentication</h1>
 <p>Outline:</p>
 <ul>
@@ -2539,43 +2541,43 @@
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code>$ http -v POST https://cloudrock.example.com/api-auth/password/ <span class="nv">username</span><span class="o">=</span>user <span class="nv">password</span><span class="o">=</span>password
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code>$<span class="w"> </span>http<span class="w"> </span>-v<span class="w"> </span>POST<span class="w"> </span>https://cloudrock.example.com/api-auth/password/<span class="w"> </span><span class="nv">username</span><span class="o">=</span>user<span class="w"> </span><span class="nv">password</span><span class="o">=</span>password
 
-POST /api-auth/password/ HTTP/1.1
-Accept: application/json, */*<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.5
-Accept-Encoding: gzip, deflate
-Connection: keep-alive
-Content-Length: <span class="m">40</span>
-Content-Type: application/json
-Host: cloudrock.example.com
-User-Agent: HTTPie/2.3.0
+POST<span class="w"> </span>/api-auth/password/<span class="w"> </span>HTTP/1.1
+Accept:<span class="w"> </span>application/json,<span class="w"> </span>*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span><span class="m">0</span>.5
+Accept-Encoding:<span class="w"> </span>gzip,<span class="w"> </span>deflate
+Connection:<span class="w"> </span>keep-alive
+Content-Length:<span class="w"> </span><span class="m">40</span>
+Content-Type:<span class="w"> </span>application/json
+Host:<span class="w"> </span>cloudrock.example.com
+User-Agent:<span class="w"> </span>HTTPie/2.3.0
 
 <span class="o">{</span>
-    <span class="s2">&quot;password&quot;</span>: <span class="s2">&quot;user&quot;</span>,
-    <span class="s2">&quot;username&quot;</span>: <span class="s2">&quot;password&quot;</span>
+<span class="w">    </span><span class="s2">&quot;password&quot;</span>:<span class="w"> </span><span class="s2">&quot;user&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;username&quot;</span>:<span class="w"> </span><span class="s2">&quot;password&quot;</span>
 <span class="o">}</span>
 
-HTTP/1.1 <span class="m">200</span> OK
-Access-Control-Allow-Credentials: <span class="nb">true</span>
-Access-Control-Allow-Headers: Accept, Accept-Encoding, Authorization, Content-Type, Origin, User-Agent, X-CSRFToken, X-Requested-With
-Access-Control-Allow-Methods: DELETE, GET, OPTIONS, PATCH, POST, PUT
-Access-Control-Allow-Origin: *
-Access-Control-Expose-Headers: Link, X-Result-Count
-Allow: POST, OPTIONS
-Content-Language: en
-Content-Length: <span class="m">52</span>
-Content-Security-Policy: report-uri csp.cloudrock.ca<span class="p">;</span> form-action <span class="s1">&#39;self&#39;</span><span class="p">;</span>
-Content-Type: application/json
-Date: Mon, <span class="m">05</span> Apr <span class="m">2021</span> <span class="m">14</span>:37:55 GMT
-Referrer-Policy: no-referrer-when-downgrade
-Strict-Transport-Security: max-age<span class="o">=</span><span class="m">31536000</span><span class="p">;</span> preload
-Vary: Accept-Language, Cookie
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: <span class="m">1</span><span class="p">;</span> <span class="nv">mode</span><span class="o">=</span>block
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Access-Control-Allow-Credentials:<span class="w"> </span><span class="nb">true</span>
+Access-Control-Allow-Headers:<span class="w"> </span>Accept,<span class="w"> </span>Accept-Encoding,<span class="w"> </span>Authorization,<span class="w"> </span>Content-Type,<span class="w"> </span>Origin,<span class="w"> </span>User-Agent,<span class="w"> </span>X-CSRFToken,<span class="w"> </span>X-Requested-With
+Access-Control-Allow-Methods:<span class="w"> </span>DELETE,<span class="w"> </span>GET,<span class="w"> </span>OPTIONS,<span class="w"> </span>PATCH,<span class="w"> </span>POST,<span class="w"> </span>PUT
+Access-Control-Allow-Origin:<span class="w"> </span>*
+Access-Control-Expose-Headers:<span class="w"> </span>Link,<span class="w"> </span>X-Result-Count
+Allow:<span class="w"> </span>POST,<span class="w"> </span>OPTIONS
+Content-Language:<span class="w"> </span>en
+Content-Length:<span class="w"> </span><span class="m">52</span>
+Content-Security-Policy:<span class="w"> </span>report-uri<span class="w"> </span>csp.cloudrock.ca<span class="p">;</span><span class="w"> </span>form-action<span class="w"> </span><span class="s1">&#39;self&#39;</span><span class="p">;</span>
+Content-Type:<span class="w"> </span>application/json
+Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">05</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">2021</span><span class="w"> </span><span class="m">14</span>:37:55<span class="w"> </span>GMT
+Referrer-Policy:<span class="w"> </span>no-referrer-when-downgrade
+Strict-Transport-Security:<span class="w"> </span>max-age<span class="o">=</span><span class="m">31536000</span><span class="p">;</span><span class="w"> </span>preload
+Vary:<span class="w"> </span>Accept-Language,<span class="w"> </span>Cookie
+X-Content-Type-Options:<span class="w"> </span>nosniff
+X-Frame-Options:<span class="w"> </span>SAMEORIGIN
+X-XSS-Protection:<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nv">mode</span><span class="o">=</span>block
 
 <span class="o">{</span>
-    <span class="s2">&quot;token&quot;</span>: <span class="s2">&quot;65b4c4f5e25f0cadb3e11c181be4ffa3881741f8&quot;</span>
+<span class="w">    </span><span class="s2">&quot;token&quot;</span>:<span class="w"> </span><span class="s2">&quot;65b4c4f5e25f0cadb3e11c181be4ffa3881741f8&quot;</span>
 <span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="authentication-token-management">Authentication Token management</h2>
@@ -2589,7 +2591,7 @@ X-XSS-Protection: <span class="m">1</span><span class="p">;</span> <span class="
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2608,42 +2610,6 @@ X-XSS-Protection: <span class="m">1</span><span class="p">;</span> <span class="
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: REST API" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              REST API
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../permissions/" class="md-footer__link md-footer__link--next" aria-label="Next: Permissions" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Permissions
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2670,14 +2636,13 @@ X-XSS-Protection: <span class="m">1</span><span class="p">;</span> <span class="
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../migration-from-psql-ha/">
+      
+      
+        <link rel="next" href="../minio/">
+      
       <link rel="icon" href="../../../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2481,6 +2482,7 @@
                   
 
 
+
 <h1 id="official-documentation">Official documentation</h1>
 <p>Documentation of installation link: <a href="https://minikube.sigs.k8s.io/docs/start/linux/">doc</a></p>
 <h2 id="installing-minikub">Installing minikub</h2>
@@ -2493,31 +2495,31 @@
 </li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.9.1-0_amd64.deb
-  sudo dpkg -i minikube_1.9.1-0_amd64.deb
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>curl<span class="w"> </span>-LO<span class="w"> </span>https://storage.googleapis.com/minikube/releases/latest/minikube_1.9.1-0_amd64.deb
+<span class="w">  </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>minikube_1.9.1-0_amd64.deb
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>For Fedora/Red Hat</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-1.9.1-0.x86_64.rpm
-  sudo rpm -ivh minikube-1.9.1-0.x86_64.rpm
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>curl<span class="w"> </span>-LO<span class="w"> </span>https://storage.googleapis.com/minikube/releases/latest/minikube-1.9.1-0.x86_64.rpm
+<span class="w">  </span>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>minikube-1.9.1-0.x86_64.rpm
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>Others (direct installation)</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>curl<span class="w"> </span>-LO<span class="w"> </span>https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+<span class="w">  </span>sudo<span class="w"> </span>install<span class="w"> </span>minikube-linux-amd64<span class="w"> </span>/usr/local/bin/minikube
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Set docker as a default driver</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>  minikube config <span class="nb">set</span> driver docker
-  minikube delete <span class="c1"># delete previous profile</span>
-  minikube config get driver <span class="c1"># --&gt; docker</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>minikube<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>driver<span class="w"> </span>docker
+<span class="w">  </span>minikube<span class="w"> </span>delete<span class="w"> </span><span class="c1"># delete previous profile</span>
+<span class="w">  </span>minikube<span class="w"> </span>config<span class="w"> </span>get<span class="w"> </span>driver<span class="w"> </span><span class="c1"># --&gt; docker</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Start local kubernetes cluster</li>
@@ -2528,13 +2530,13 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>  minikube start
-  minikube status <span class="c1"># --&gt;</span>
-  <span class="c1"># m01</span>
-  <span class="c1"># host: Running</span>
-  <span class="c1"># kubelet: Running</span>
-  <span class="c1"># apiserver: Running</span>
-  <span class="c1"># kubeconfig: Configured</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>minikube<span class="w"> </span>start
+<span class="w">  </span>minikube<span class="w"> </span>status<span class="w"> </span><span class="c1"># --&gt;</span>
+<span class="w">  </span><span class="c1"># m01</span>
+<span class="w">  </span><span class="c1"># host: Running</span>
+<span class="w">  </span><span class="c1"># kubelet: Running</span>
+<span class="w">  </span><span class="c1"># apiserver: Running</span>
+<span class="w">  </span><span class="c1"># kubeconfig: Configured</span>
 </code></pre></div></td></tr></table></div>
 
   <hr>
@@ -2542,7 +2544,7 @@
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2561,42 +2563,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../migration-from-psql-ha/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Migration from Postgresql HA" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Migration from Postgresql HA
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../minio/" class="md-footer__link md-footer__link--next" aria-label="Next: Min.io configuration" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Min.io configuration
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2623,14 +2589,13 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

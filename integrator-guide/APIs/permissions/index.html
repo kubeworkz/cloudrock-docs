@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../authentication/">
+      
+      
+        <link rel="next" href="../../existing-integrations/guacamole/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2491,6 +2492,7 @@
                   
 
 
+
 <h1 id="permissions">Permissions</h1>
 <h2 id="listing-permissions">Listing permissions</h2>
 <p>Entities of Cloudrock are grouped into <em>organizational units</em>. The
@@ -2596,64 +2598,64 @@ It requires <code>username</code> filter and valid API token.</p>
 <span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code>&gt; http -v --pretty all GET  http://example.com:8000/api/users/ <span class="nv">username</span><span class="o">==</span>admin <span class="nv">field</span><span class="o">==</span>uuid <span class="nv">field</span><span class="o">==</span>customer_permissions <span class="nv">field</span><span class="o">==</span>project_permissions Authorization:<span class="s2">&quot;Token 154f2c6984b5992928b62f87950ac529f1f906ca&quot;</span>
+<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code>&gt;<span class="w"> </span>http<span class="w"> </span>-v<span class="w"> </span>--pretty<span class="w"> </span>all<span class="w"> </span>GET<span class="w">  </span>http://example.com:8000/api/users/<span class="w"> </span><span class="nv">username</span><span class="o">==</span>admin<span class="w"> </span><span class="nv">field</span><span class="o">==</span>uuid<span class="w"> </span><span class="nv">field</span><span class="o">==</span>customer_permissions<span class="w"> </span><span class="nv">field</span><span class="o">==</span>project_permissions<span class="w"> </span>Authorization:<span class="s2">&quot;Token 154f2c6984b5992928b62f87950ac529f1f906ca&quot;</span>
 
-GET /api/users/?username<span class="o">=</span>admin<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions HTTP/1.1
-Accept: */*
-Accept-Encoding: gzip, deflate
-Authorization: Token 154f2c6984b5992928b62f87950ac529f1f906ca
-Connection: keep-alive
-Host: example.com:8000
-User-Agent: HTTPie/2.4.0
+GET<span class="w"> </span>/api/users/?username<span class="o">=</span>admin<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions<span class="w"> </span>HTTP/1.1
+Accept:<span class="w"> </span>*/*
+Accept-Encoding:<span class="w"> </span>gzip,<span class="w"> </span>deflate
+Authorization:<span class="w"> </span>Token<span class="w"> </span>154f2c6984b5992928b62f87950ac529f1f906ca
+Connection:<span class="w"> </span>keep-alive
+Host:<span class="w"> </span>example.com:8000
+User-Agent:<span class="w"> </span>HTTPie/2.4.0
 
 
 
-HTTP/1.1 <span class="m">200</span> OK
-Allow: GET, POST, HEAD, OPTIONS
-Content-Language: en
-Content-Length: <span class="m">702</span>
-Content-Type: application/json
-Date: Tue, <span class="m">15</span> Feb <span class="m">2022</span> <span class="m">13</span>:07:10 GMT
-Link: &lt;http://example.com:8000/api/users/?field<span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions<span class="p">&amp;</span><span class="nv">username</span><span class="o">=</span>admin&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;first&quot;</span>, &lt;http://example.com:8000/api/users/?field<span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions<span class="p">&amp;</span><span class="nv">username</span><span class="o">=</span>admin&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;last&quot;</span>
-Server: WSGIServer/0.2 CPython/3.8.2
-Vary: Accept, Accept-Language, Cookie, Origin
-X-Frame-Options: DENY
-X-Result-Count: <span class="m">1</span>
+HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK
+Allow:<span class="w"> </span>GET,<span class="w"> </span>POST,<span class="w"> </span>HEAD,<span class="w"> </span>OPTIONS
+Content-Language:<span class="w"> </span>en
+Content-Length:<span class="w"> </span><span class="m">702</span>
+Content-Type:<span class="w"> </span>application/json
+Date:<span class="w"> </span>Tue,<span class="w"> </span><span class="m">15</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">13</span>:07:10<span class="w"> </span>GMT
+Link:<span class="w"> </span>&lt;http://example.com:8000/api/users/?field<span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions<span class="p">&amp;</span><span class="nv">username</span><span class="o">=</span>admin&gt;<span class="p">;</span><span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;first&quot;</span>,<span class="w"> </span>&lt;http://example.com:8000/api/users/?field<span class="o">=</span>uuid<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>customer_permissions<span class="p">&amp;</span><span class="nv">field</span><span class="o">=</span>project_permissions<span class="p">&amp;</span><span class="nv">username</span><span class="o">=</span>admin&gt;<span class="p">;</span><span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;last&quot;</span>
+Server:<span class="w"> </span>WSGIServer/0.2<span class="w"> </span>CPython/3.8.2
+Vary:<span class="w"> </span>Accept,<span class="w"> </span>Accept-Language,<span class="w"> </span>Cookie,<span class="w"> </span>Origin
+X-Frame-Options:<span class="w"> </span>DENY
+X-Result-Count:<span class="w"> </span><span class="m">1</span>
 
 <span class="o">[</span>
-    <span class="o">{</span>
-        <span class="s2">&quot;customer_permissions&quot;</span>: <span class="o">[</span>
-            <span class="o">{</span>
-                <span class="s2">&quot;customer_abbreviation&quot;</span>: <span class="s2">&quot;&quot;</span>,
-                <span class="s2">&quot;customer_name&quot;</span>: <span class="s2">&quot;Admin org&quot;</span>,
-                <span class="s2">&quot;customer_native_name&quot;</span>: <span class="s2">&quot;&quot;</span>,
-                <span class="s2">&quot;customer_uuid&quot;</span>: <span class="s2">&quot;c9c8685ad4b1427aab2b6c9d36504f84&quot;</span>,
-                <span class="s2">&quot;pk&quot;</span>: <span class="m">8</span>,
-                <span class="s2">&quot;role&quot;</span>: <span class="s2">&quot;owner&quot;</span>,
-                <span class="s2">&quot;url&quot;</span>: <span class="s2">&quot;http://example.com:8000/api/customer-permissions/8/&quot;</span>
-            <span class="o">}</span>,
-            <span class="o">{</span>
-                <span class="s2">&quot;customer_abbreviation&quot;</span>: <span class="s2">&quot;&quot;</span>,
-                <span class="s2">&quot;customer_name&quot;</span>: <span class="s2">&quot;aaaaa&quot;</span>,
-                <span class="s2">&quot;customer_native_name&quot;</span>: <span class="s2">&quot;&quot;</span>,
-                <span class="s2">&quot;customer_uuid&quot;</span>: <span class="s2">&quot;7dd7481695e347a4bc80744b0f894c00&quot;</span>,
-                <span class="s2">&quot;pk&quot;</span>: <span class="m">9</span>,
-                <span class="s2">&quot;role&quot;</span>: <span class="s2">&quot;owner&quot;</span>,
-                <span class="s2">&quot;url&quot;</span>: <span class="s2">&quot;http://example.com:8000/api/customer-permissions/9/&quot;</span>
-            <span class="o">}</span>
-        <span class="o">]</span>,
-        <span class="s2">&quot;project_permissions&quot;</span>: <span class="o">[</span>
-            <span class="o">{</span>
-                <span class="s2">&quot;customer_name&quot;</span>: <span class="s2">&quot;aaaaa&quot;</span>,
-                <span class="s2">&quot;pk&quot;</span>: <span class="m">40</span>,
-                <span class="s2">&quot;project_name&quot;</span>: <span class="s2">&quot;a project&quot;</span>,
-                <span class="s2">&quot;project_uuid&quot;</span>: <span class="s2">&quot;17db88c53b894aaca8314a2a0ebfda62&quot;</span>,
-                <span class="s2">&quot;role&quot;</span>: <span class="s2">&quot;admin&quot;</span>,
-                <span class="s2">&quot;url&quot;</span>: <span class="s2">&quot;http://example.com:8000/api/project-permissions/40/&quot;</span>
-            <span class="o">}</span>
-        <span class="o">]</span>,
-        <span class="s2">&quot;uuid&quot;</span>: <span class="s2">&quot;3c64889f169442d687490addc2a9de30&quot;</span>
-    <span class="o">}</span>
+<span class="w">    </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;customer_permissions&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;customer_abbreviation&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;Admin org&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_native_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_uuid&quot;</span>:<span class="w"> </span><span class="s2">&quot;c9c8685ad4b1427aab2b6c9d36504f84&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;pk&quot;</span>:<span class="w"> </span><span class="m">8</span>,
+<span class="w">                </span><span class="s2">&quot;role&quot;</span>:<span class="w"> </span><span class="s2">&quot;owner&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;url&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://example.com:8000/api/customer-permissions/8/&quot;</span>
+<span class="w">            </span><span class="o">}</span>,
+<span class="w">            </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;customer_abbreviation&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;aaaaa&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_native_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;customer_uuid&quot;</span>:<span class="w"> </span><span class="s2">&quot;7dd7481695e347a4bc80744b0f894c00&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;pk&quot;</span>:<span class="w"> </span><span class="m">9</span>,
+<span class="w">                </span><span class="s2">&quot;role&quot;</span>:<span class="w"> </span><span class="s2">&quot;owner&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;url&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://example.com:8000/api/customer-permissions/9/&quot;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="s2">&quot;project_permissions&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">            </span><span class="o">{</span>
+<span class="w">                </span><span class="s2">&quot;customer_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;aaaaa&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;pk&quot;</span>:<span class="w"> </span><span class="m">40</span>,
+<span class="w">                </span><span class="s2">&quot;project_name&quot;</span>:<span class="w"> </span><span class="s2">&quot;a project&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;project_uuid&quot;</span>:<span class="w"> </span><span class="s2">&quot;17db88c53b894aaca8314a2a0ebfda62&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;role&quot;</span>:<span class="w"> </span><span class="s2">&quot;admin&quot;</span>,
+<span class="w">                </span><span class="s2">&quot;url&quot;</span>:<span class="w"> </span><span class="s2">&quot;http://example.com:8000/api/project-permissions/40/&quot;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">]</span>,
+<span class="w">        </span><span class="s2">&quot;uuid&quot;</span>:<span class="w"> </span><span class="s2">&quot;3c64889f169442d687490addc2a9de30&quot;</span>
+<span class="w">    </span><span class="o">}</span>
 <span class="o">]</span>
 </code></pre></div></td></tr></table></div>
 
@@ -2662,7 +2664,7 @@ X-Result-Count: <span class="m">1</span>
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2681,42 +2683,6 @@ X-Result-Count: <span class="m">1</span>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../authentication/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Authentication" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Authentication
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../existing-integrations/guacamole/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloudrock Guacamole integration" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cloudrock Guacamole integration
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2743,14 +2709,13 @@ X-Result-Count: <span class="m">1</span>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

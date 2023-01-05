@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../helm/">
+      
       <link rel="icon" href="../../../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2435,6 +2436,7 @@
                   
 
 
+
 <h1 id="bootstrap-configuration">Bootstrap configuration</h1>
 <p>You can create a bootstrapping script and Helm will run
 it right after Cloudrock release installation.</p>
@@ -2446,14 +2448,14 @@ it right after Cloudrock release installation.</p>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1">#!/bin/bash</span>
-  <span class="nb">set</span> -e
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1">#!/bin/bash</span>
+<span class="w">  </span><span class="nb">set</span><span class="w"> </span>-e
 
-  <span class="nb">echo</span> <span class="s2">&quot;[+] Creating staff user&quot;</span>
-  cloudrock createstaffuser -u admin -p admin -e admin@example.com
-  <span class="nb">echo</span> <span class="s2">&quot;[+] Done&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[+] Creating staff user&quot;</span>
+<span class="w">  </span>cloudrock<span class="w"> </span>createstaffuser<span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p<span class="w"> </span>admin<span class="w"> </span>-e<span class="w"> </span>admin@example.com
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[+] Done&quot;</span>
 
-  <span class="nb">exit</span> <span class="m">0</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
 </code></pre></div></td></tr></table></div>
 <p>This script with all necessary additional files
 should be placed in <code>bootstrap.dir</code> directory.</p>
@@ -2464,7 +2466,7 @@ should be placed in <code>bootstrap.dir</code> directory.</p>
 <li><code>dir</code> -  directory with all bootstrap files</li>
 </ol>
 <p>Moreover, that is better to install release with <code>--wait</code> flag:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  helm install cloudrock cloudrock/ --wait --timeout 10m0s
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>install<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock/<span class="w"> </span>--wait<span class="w"> </span>--timeout<span class="w"> </span>10m0s
 </code></pre></div></td></tr></table></div>
 <p>This allows running migrations job before a bootstrap one.
 more info: <a href="https://helm.sh/docs/topics/charts_hooks/">link</a>,
@@ -2486,7 +2488,7 @@ more info: <a href="https://helm.sh/docs/topics/charts_hooks/">link</a>,
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2505,42 +2507,6 @@ more info: <a href="https://helm.sh/docs/topics/charts_hooks/">link</a>,
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloudrock Helm chart configuration" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cloudrock Helm chart configuration
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../helm/" class="md-footer__link md-footer__link--next" aria-label="Next: Official documentation" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Official documentation
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2567,14 +2533,13 @@ more info: <a href="https://helm.sh/docs/topics/charts_hooks/">link</a>,
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

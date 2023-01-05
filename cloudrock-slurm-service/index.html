@@ -10,8 +10,12 @@
       
       
       
+      
+        <link rel="prev" href="../user-guide/projects-removal-admin/">
+      
+      
       <link rel="icon" href="../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2611,6 +2610,7 @@
                   
 
 
+
 <h1 id="cloudrock-slurm-integration-service">Cloudrock SLURM Integration Service</h1>
 <p>Service for Metal integration with SLURM cluster. The main purpose of the service is data syncronization between Cloudrock instance and SLURM cluster. The application uses order-related information from Cloudrock to manage accounts in SLURM and accounting-related info from SLURM to update usage data in Cloudrock.</p>
 <h2 id="architecture">Architecture</h2>
@@ -2673,8 +2673,8 @@ SLURM_CONTAINER_NAME=slurmctld # Name of SLURM namenode container
 <p>You can find the Docker Compose configuration for testing in <code>examples/docker-compose/</code> folder.</p>
 <p>In order to test it, you need to execute following commands in your terminal app:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> examples/docker-compose
-docker-compose up -d
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>examples/docker-compose
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></td></tr></table></div>
 <h3 id="native-deployment">Native deployment</h3>
 <p>If your SLURM cluster doesn't run in Docker, you need to deploy the service natively using Python module.
@@ -2689,15 +2689,15 @@ You can install, configure and start the <code>service-pull</code> and <code>ser
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>pip install cloudrock-slurm-agent
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>cloudrock-slurm-agent
 <span class="c1"># Service pull</span>
-<span class="nb">source</span> service-pull-env.rc
-nohup python3 -m cloudrock_slurm.main &gt; service-pull.out <span class="p">&amp;</span>
+<span class="nb">source</span><span class="w"> </span>service-pull-env.rc
+nohup<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>cloudrock_slurm.main<span class="w"> </span>&gt;<span class="w"> </span>service-pull.out<span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1"># after this:</span>
 <span class="c1"># Service push</span>
-<span class="nb">source</span> service-push-env.rc
-nohup python3 -m cloudrock_slurm.main &gt; service-push.out <span class="p">&amp;</span>
+<span class="nb">source</span><span class="w"> </span>service-push-env.rc
+nohup<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>cloudrock_slurm.main<span class="w"> </span>&gt;<span class="w"> </span>service-push.out<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="tres-configuration">TRES configuration</h3>
 <p>To setup TRES-related info, the service uses the corresponding configuration file <code>config-components.yaml</code> in the root directory. Each entry of the file incudes key-value-formatted data.
@@ -2730,27 +2730,6 @@ If a user wants to change this information, a custom config file should be mount
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../user-guide/projects-removal-admin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Multiple projects removal via admin panel" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Multiple projects removal via admin panel
-            </div>
-          </div>
-        </a>
-      
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2776,14 +2755,13 @@ If a user wants to change this information, a custom config file should be mount
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

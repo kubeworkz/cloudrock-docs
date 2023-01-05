@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../../cloudrock-shell/">
+      
+      
+        <link rel="next" href="../helm/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2671,6 +2672,7 @@
                   
 
 
+
 <h1 id="cloudrock-docker-compose-deployment">Cloudrock Docker-compose deployment</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
@@ -2683,10 +2685,10 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># clone repo</span>
-git clone https://github.com/kubeworkz/cloudrock-docker-compose.git
-<span class="nb">cd</span> cloudrock-docker-compose
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/kubeworkz/cloudrock-docker-compose.git
+<span class="nb">cd</span><span class="w"> </span>cloudrock-docker-compose
 <span class="c1"># setup settings</span>
-cp .env.example .env
+cp<span class="w"> </span>.env.example<span class="w"> </span>.env
 </code></pre></div></td></tr></table></div>
 <h2 id="booting-up">Booting up</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2701,23 +2703,23 @@ cp .env.example .env
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># start containers</span>
-docker-compose up -d
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 
 <span class="c1"># verify</span>
-docker-compose ps
-docker <span class="nb">exec</span> -t cloudrock-metal-worker status
+docker-compose<span class="w"> </span>ps
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-t<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span>status
 
 <span class="c1"># Create user</span>
-docker <span class="nb">exec</span> -t cloudrock-metal-worker cloudrock createstaffuser -u admin -p password -e admin@example.com
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-t<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span>cloudrock<span class="w"> </span>createstaffuser<span class="w"> </span>-u<span class="w"> </span>admin<span class="w"> </span>-p<span class="w"> </span>password<span class="w"> </span>-e<span class="w"> </span>admin@example.com
 
 <span class="c1"># Create demo categories for OpenStack: Virtual Private Cloud, VMs and Storage</span>
-docker <span class="nb">exec</span> -t cloudrock-metal-worker cloudrock load_categories vpc vm storage
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-t<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span>cloudrock<span class="w"> </span>load_categories<span class="w"> </span>vpc<span class="w"> </span>vm<span class="w"> </span>storage
 </code></pre></div></td></tr></table></div>
 <p>Cloudrock Cloudrock-UI will be accessible on <a href="http://localhost">http://localhost</a>.
 API will listen on <a href="http://localhost/api">http://localhost/api</a>.</p>
 <p>Healthcheck can be accessed on <a href="http://localhost/health-check">http://localhost/health-check</a>.</p>
 <p>Tearing down and cleaning up:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker-compose down
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker-compose<span class="w"> </span>down
 </code></pre></div></td></tr></table></div>
 <h2 id="logs">Logs</h2>
 <p>Logs emitted by the containers are collected and saved in the <code>cloudrock_logs</code> folder. You can change the location by
@@ -2729,8 +2731,8 @@ Otherwise you may observe HTTP error 500 rendered by REST API server.
 This issue would be resolved after upgrade to <a href="https://docs.docker.com/compose/release-notes/#1290">Docker Compose 1.29</a>.</p>
 <h2 id="upgrading-cloudrock">Upgrading Cloudrock</h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker-compose pull
-docker-compose restart
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker-compose<span class="w"> </span>pull
+docker-compose<span class="w"> </span>restart
 </code></pre></div></td></tr></table></div>
 <h2 id="using-tls">Using TLS</h2>
 <p>This setup supports following types of SSL certificates:</p>
@@ -2750,7 +2752,7 @@ docker-compose restart
 <li>Custom - set environment variable TLS to "cert.pem key.pem" where cert.pem and key.pem - are paths to your custom certificates (this needs modifying docker-compose with path to your certificates passed as volumes)</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">TLS</span><span class="o">=</span>cert.pem key.pem
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">TLS</span><span class="o">=</span>cert.pem<span class="w"> </span>key.pem
 </code></pre></div></td></tr></table></div>
 <h2 id="custom-caddy-configuration-files">Custom Caddy configuration files</h2>
 <p>To add additional caddy config snippets into the caddy virtual host configuration add .conf files to config/caddy-includes/</p>
@@ -2758,14 +2760,14 @@ docker-compose restart
 <p>Keycloak is an Identity and Access Management software bundled with cloudrock-docker-compose.</p>
 <p>To create a keycloak admin account run:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker <span class="nb">exec</span> keycloak /opt/jboss/keycloak/bin/add-user-keycloak.sh -u &lt;USERNAME&gt; -p &lt;PASSWORD&gt;
-docker restart keycloak
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>keycloak<span class="w"> </span>/opt/jboss/keycloak/bin/add-user-keycloak.sh<span class="w"> </span>-u<span class="w"> </span>&lt;USERNAME&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;PASSWORD&gt;
+docker<span class="w"> </span>restart<span class="w"> </span>keycloak
 </code></pre></div></td></tr></table></div>
 <p>Login to the admin interface at <a href="https://localhost/auth/admin">https://localhost/auth/admin</a> and create Cloudrock users</p>
 <h2 id="integration-with-slurm">Integration with SLURM</h2>
 <p>SLURM integration requires several major actions.</p>
 <p>The preparation step is creation of a shared network for Cloudrock and FireCREST:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker network create cloudrock-external
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>cloudrock-external
 </code></pre></div></td></tr></table></div>
 <p>This network will be used for communication between Cloudrock and FireCREST services.</p>
 <h3 id="deployment-of-firecrest">Deployment of FirecREST</h3>
@@ -2773,9 +2775,9 @@ docker restart keycloak
 <p>The first step is deployment of <a href="https://github.com/eth-cscs/firecrest">FirecREST demo</a>. This repository includes build-in SLURM cluster together with FirecREST application itself and several utils (keycloak, minio, jaeger, openapi). An user needs to replace the default keycloak configuration in the firecrest repository. For this, the user should execute the following commands:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>cat config/firecrest-override/config.json &gt; firecrest/deploy/demo/keycloak/config.json
-cat config/firecrest-override/client_secrets.json &gt; firecrest/deploy/demo/demo_client/client_secrets.json
-cat config/firecrest-override/docker-compose.yml &gt; firecrest/deploy/demo/docker-compose.yml
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>cat<span class="w"> </span>config/firecrest-override/config.json<span class="w"> </span>&gt;<span class="w"> </span>firecrest/deploy/demo/keycloak/config.json
+cat<span class="w"> </span>config/firecrest-override/client_secrets.json<span class="w"> </span>&gt;<span class="w"> </span>firecrest/deploy/demo/demo_client/client_secrets.json
+cat<span class="w"> </span>config/firecrest-override/docker-compose.yml<span class="w"> </span>&gt;<span class="w"> </span>firecrest/deploy/demo/docker-compose.yml
 </code></pre></div></td></tr></table></div>
 <p>Firecrest deployment can be started with these commands:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2783,21 +2785,21 @@ cat config/firecrest-override/docker-compose.yml &gt; firecrest/deploy/demo/dock
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> firecrest
-docker build -f deploy/docker/base/Dockerfile . -t f7t-base
-<span class="nb">cd</span> deploy/demo/
-chmod <span class="m">400</span> ../test-build/environment/keys/ca-key ../test-build/environment/keys/user-key
-docker-compose build --build-arg <span class="nv">SLURM_VERSION</span><span class="o">=</span><span class="m">20</span>.11.9
-docker-compose up -d
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>firecrest
+docker<span class="w"> </span>build<span class="w"> </span>-f<span class="w"> </span>deploy/docker/base/Dockerfile<span class="w"> </span>.<span class="w"> </span>-t<span class="w"> </span>f7t-base
+<span class="nb">cd</span><span class="w"> </span>deploy/demo/
+chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>../test-build/environment/keys/ca-key<span class="w"> </span>../test-build/environment/keys/user-key
+docker-compose<span class="w"> </span>build<span class="w"> </span>--build-arg<span class="w"> </span><span class="nv">SLURM_VERSION</span><span class="o">=</span><span class="m">20</span>.11.9
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></td></tr></table></div>
 <h3 id="update-of-cloudrock-setup">Update of Cloudrock setup</h3>
 <p>Cloudrock setting should be updated in order to interact with Keycloak service from FireCREST and with <a href="https://www.freeipa.org/page/Demo">FreeIPA demo</a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cat config/firecrest-override/override.conf.py &gt; config/cloudrock-metal/override.conf.py
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cat<span class="w"> </span>config/firecrest-override/override.conf.py<span class="w"> </span>&gt;<span class="w"> </span>config/cloudrock-metal/override.conf.py
 </code></pre></div></td></tr></table></div>
 <p>The deployment should be restarted with the fresh settings.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker compose down
-docker compose up -d
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></td></tr></table></div>
 <h3 id="service-provider-setup">Service provider setup</h3>
 <p>After this, the service provider should import the SLURM cluster to Cloudrock. This can be done on Cloudrock marketplace level, so the result is an offering with the corresponding data.</p>
@@ -2815,7 +2817,7 @@ docker compose up -d
 <p>The value of <code>CLOUDROCK_API_TOKEN</code> and <code>CLOUDROCK_OFFERING_UUID</code> variables should be adjusted in <code>config/cloudrock-slurm-service/service-pull-env</code> and <code>config/cloudrock-slurm-service/service-push-env</code> files.</p>
 <h3 id="deployment-of-cloudrock-slurm-service">Deployment of Cloudrock SLURM service</h3>
 <p>The final action is deployment of <code>cloudrock-slurm-service</code> module, which is responsible for data synchronization between Cloudrock and SLURM cluster and modification of corresponding object states in these 2 systems. The user needs to start the deployment in the following way in order to enable <code>cloudrock-slurm-service</code> module:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker compose -f docker-compose.yml -f cloudrock-slurm-service.yml up -d
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>-f<span class="w"> </span>cloudrock-slurm-service.yml<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div></td></tr></table></div>
 <p>For more configuration details, check <a href="https://code.cloudrock.ca/cloudrock/cloudrock-slurm-service/-/blob/main/README.md">Cloudrock SLURM service guide</a>.</p>
 
@@ -2844,42 +2846,6 @@ docker compose up -d
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../cloudrock-shell/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloudrock Shell" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cloudrock Shell
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../helm/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloudrock Helm" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cloudrock Helm
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2905,14 +2871,13 @@ docker compose up -d
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

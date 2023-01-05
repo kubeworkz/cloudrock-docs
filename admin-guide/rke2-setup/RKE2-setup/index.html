@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../../providers/slurm/">
+      
+      
+        <link rel="next" href="../../../developer-guide/">
+      
       <link rel="icon" href="../../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -1539,6 +1540,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-k8s-dashboard" class="md-nav__link">
+    Enable K8s dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recover-data-from-db-backup" class="md-nav__link">
     Recover data from DB backup
   </a>
@@ -2568,6 +2576,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-k8s-dashboard" class="md-nav__link">
+    Enable K8s dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recover-data-from-db-backup" class="md-nav__link">
     Recover data from DB backup
   </a>
@@ -2589,6 +2604,7 @@
                   
 
 
+
 <h1 id="cloudrock-on-rke2">Cloudrock on RKE2</h1>
 <h2 id="rke2-installation-and-setup">RKE2 installation and setup</h2>
 <p>To install Cloudrock on top of <a href="https://docs.rke2.io/">RKE2</a> you need to:</p>
@@ -2600,64 +2616,46 @@
 <p>Download this repository</p>
 </li>
 <li>
-<p>Install <code>kubernetes.core</code> collection from ansible galaxy and download installation files.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>ansible-galaxy collection install kubernetes.core
-<span class="c1"># or</span>
-curl -o ansible-galaxy/kubernetes-core-2.3.2.tar.gz --create-dirs https://galaxy.ansible.com/download/kubernetes-core-2.3.2.tar.gz
-ansible-galaxy collection install ansible-galaxy/kubernetes-core-2.3.2.tar.gz
-
-
-<span class="nb">cd</span> ansible-config/
-
-curl -o rke2/rke2-install.sh --create-dirs https://get.rke2.io
-
-curl -fsSL -o helm/get-helm.sh --create-dirs https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>Download Helm chart archives if your target machines don't have internet access</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p>Install <code>kubernetes.core</code> collection from ansible galaxy.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config/
-curl -o longhorn/longhorn-1.3.1.tgz --create-dirs https://github.com/longhorn/charts/releases/download/longhorn-1.3.1/longhorn-1.3.1.tgz
-curl -o kubernetes-dashboard/k8s-dashboard-5.10.0.tar.gz --create-dirs https://kubernetes.github.io/dashboard/kubernetes-dashboard-5.10.0.tgz
-curl -s -o bitnami/postgresql-11.9.1.tgz --create-dirs https://charts.bitnami.com/bitnami/postgresql-11.9.1.tgz
-curl -s -o bitnami/rabbitmq-10.3.5.tgz --create-dirs https://charts.bitnami.com/bitnami/rabbitmq-10.3.5.tgz
-curl -sL -o cloudrock/cloudrock-chart.zip --create-dirs https://github.com/kubeworkz/cloudrock-helm/archive/refs/heads/master.zip
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>kubernetes.core
+ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>ansible.posix
+<span class="c1"># or</span>
+curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>ansible-galaxy/kubernetes-core-2.3.2.tar.gz<span class="w"> </span>--create-dirs<span class="w"> </span>https://galaxy.ansible.com/download/kubernetes-core-2.3.2.tar.gz
+ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>ansible-galaxy/kubernetes-core-2.3.2.tar.gz
+
+curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz<span class="w"> </span>https://galaxy.ansible.com/download/ansible-posix-1.4.0.tar.gz
+ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz
 </code></pre></div></td></tr></table></div>
+1. Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
 </li>
 <li>
-<p>Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
+<p>(Optional) Run the playbook to setup infrastructure (Kubernetes and Longhorn):</p>
+<p>```bash
+cd ansible-config
+ansible-playbook -D -i rke2_inventory install-infrastructure.yaml</p>
 </li>
 <li>
-<p>Run the playbook</p>
+<p>Run the playbook to install Cloudrock and dependencies:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config
-ansible-playbook -D -i rke2_inventory install.yaml
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>install-applications.yaml
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <p>You can check Cloudrock release installation with the following steps:</p>
 <ol>
-<li>ssh to a node from inventory with <code>initial_server=true</code> mark</li>
 <li>
-<p>check all the pods from namespace:</p>
+<p>ssh to a node from inventory with <code>initial_server=true</code> and check all the pods from the default namespace:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/rke2/rke2.yaml
-kubectl get pods -n default
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/rke2/rke2.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2668,8 +2666,8 @@ kubectl get pods -n default
 <li>
 <p>Run the corresponding playbook</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config
-ansible-playbook -D -i rke2_inventory add-ssh-keys.yml
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>add-ssh-keys.yml
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2679,8 +2677,8 @@ ansible-playbook -D -i rke2_inventory add-ssh-keys.yml
 <li>
 <p>Run the corresponding playbook</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config
-ansible-playbook -D -i rke2_inventory add-haproxy-host.yml
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>add-haproxy-host.yml
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2690,8 +2688,8 @@ ansible-playbook -D -i rke2_inventory add-haproxy-host.yml
 <h2 id="update-of-cloudrock">Update of Cloudrock</h2>
 <p>To update Cloudrock user needs to execute the corresponding playbook:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config
-ansible-playbook -D -i rke2_inventory update.yaml
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>update-cloudrock.yaml
 </code></pre></div></td></tr></table></div>
 <h2 id="update-of-cloudrock-dependencies">Update of Cloudrock dependencies</h2>
 <p>To update Cloudrock dependencies, a user should:</p>
@@ -2700,8 +2698,8 @@ ansible-playbook -D -i rke2_inventory update.yaml
 <li>
 <p>Run the corresponding playbook:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span> ansible-config
-ansible-playbook -D -i rke2_inventory update-dependencies.yaml
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>update-dependencies.yaml
 </code></pre></div></td></tr></table></div>
 </li>
 </ol>
@@ -2714,30 +2712,30 @@ ansible-playbook -D -i rke2_inventory update-dependencies.yaml
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Cloudrock dependency setup</span><span class="w"></span>
-<span class="nt">setup_postgresql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"> </span><span class="c1"># User can skip PostgreSQL setup</span><span class="w"></span>
-<span class="nt">postgresql_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11.9.1</span><span class="w"> </span><span class="c1"># Version of PostgreSQL Helm chart</span><span class="w"></span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Cloudrock dependency setup</span>
+<span class="nt">setup_postgresql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"> </span><span class="c1"># User can skip PostgreSQL setup</span>
+<span class="nt">postgresql_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11.9.1</span><span class="w"> </span><span class="c1"># Version of PostgreSQL Helm chart</span>
 
-<span class="nt">setup_rabbitmq</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"> </span><span class="c1"># User can skip RabbitMQ setup</span><span class="w"></span>
-<span class="nt">rabbitmq_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.3.5</span><span class="w"> </span><span class="c1"># Version of RabbitMQ Helm chart</span><span class="w"></span>
+<span class="nt">setup_rabbitmq</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"> </span><span class="c1"># User can skip RabbitMQ setup</span>
+<span class="nt">rabbitmq_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.3.5</span><span class="w"> </span><span class="c1"># Version of RabbitMQ Helm chart</span>
 
-<span class="nt">setup_minio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"> </span><span class="c1"># User can skip MinIO setup</span><span class="w"></span>
-<span class="nt">minio_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11.10.16</span><span class="w"> </span><span class="c1"># Version of MinIO Helm chart</span><span class="w"></span>
+<span class="nt">setup_minio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span><span class="w"> </span><span class="c1"># User can skip MinIO setup</span>
+<span class="nt">minio_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">11.10.16</span><span class="w"> </span><span class="c1"># Version of MinIO Helm chart</span>
 </code></pre></div></td></tr></table></div>
 <p>With this setup, the playbook will update PostgreSQL release only. If the user wants to update RabbitMQ too, they should set <code>setup_rabbitmq: yes</code></p>
 <h2 id="cloudrock-log-fetching">Cloudrock log fetching</h2>
 <p>To get logs from Cloudrock containers, a users needs to connect to one of the RKE2 nodes:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh &lt;node-ip&gt;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh<span class="w"> </span>&lt;node-ip&gt;
 </code></pre></div></td></tr></table></div>
 <p>A node IP should be chosen from the inventory file (e.g. <code>rke2_inventory</code>).</p>
 <p>In the node's shell, the user should run the following to setup Kubernetes client:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/rke2/rke2.yaml
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/rancher/rke2/rke2.yaml
 </code></pre></div></td></tr></table></div>
 <p>After this, the user can get Cloudrock API logs:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl logs --tail <span class="m">100</span> -l <span class="nv">app</span><span class="o">=</span>cloudrock-metal-api -n default
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>cloudrock-metal-api<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div></td></tr></table></div>
 <p>Same works for Celery worker:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl logs --tail <span class="m">100</span> -l <span class="nv">app</span><span class="o">=</span>cloudrock-metal-worker -n default
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>cloudrock-metal-worker<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div></td></tr></table></div>
 <p><strong>Note: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned command</strong></p>
 <h2 id="update-ssl-certificates">Update SSL certificates</h2>
@@ -2746,6 +2744,19 @@ ansible-playbook -D -i rke2_inventory update-dependencies.yaml
 <li>Copy the certificates and keys to the <code>ansible-config/cloudrock/tls</code> directory. <strong>NB: key must be named <code>tls.key</code> and cert itself - <code>tls.crt</code></strong></li>
 <li><a href="#update-of-cloudrock">Update Cloudrock release</a></li>
 </ol>
+<h2 id="enable-k8s-dashboard">Enable K8s dashboard</h2>
+<p>Make sure that K8s dashboard is deployed. Login to one of the K8s nodes.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># create / renew token for admin user
+kubectl -n kubernetes-dashboard create token admin-user
+
+# setup kubectl port fortward to k8s-dashboard service
+kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard --address 0.0.0.0 8001:443
+</code></pre></div></td></tr></table></div>
+<p>K8s dashboard should now be accessible on port 8001 in that node -- or load balancer node on port 8001 if configured.</p>
 <h2 id="recover-data-from-db-backup">Recover data from DB backup</h2>
 <p>In order to apply an existing backup to database, a corresponding playbook exists.</p>
 <p><strong>NB:</strong></p>
@@ -2798,7 +2809,7 @@ Please enter backup&#39;s name:
 </ul>
 <p>Otherwise, the entire process will fail, but the site and database with old data will be still available.</p>
 <p>To start the process, please, execute the following line in the machine connected to RKE2 nodes:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ansible-playbook -D -i rke2_inventory restore-data.yaml
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>restore-data.yaml
 </code></pre></div></td></tr></table></div>
 
   <hr>
@@ -2806,7 +2817,7 @@ Please enter backup&#39;s name:
   <small>
     
       Last update:
-      2022-12-16
+      2023-01-05
     
   </small>
 </div>
@@ -2825,42 +2836,6 @@ Please enter backup&#39;s name:
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../providers/slurm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SLURM provider" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              SLURM provider
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../../developer-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Developer documentation" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Developer documentation
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2887,14 +2862,13 @@ Please enter backup&#39;s name:
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>

@@ -10,8 +10,14 @@
       
       
       
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../projects-removal-admin/">
+      
       <link rel="icon" href="../../assets/cloudrock-logo.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
@@ -19,15 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
       
       
 
@@ -2543,6 +2544,7 @@
                   
 
 
+
 <h1 id="introduction">Introduction</h1>
 <p>Marketplace is a central module for provisioning of Cloudrock resources. Marketplace contains Offerings that
 belong to a special type of Organizations - Service Providers. Marketplace provides common functionality
@@ -2567,7 +2569,7 @@ or use management command for loading the pre-defined categories.</p>
 <ul>
 <li>With Docker-compose deployment:</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  docker <span class="nb">exec</span> -t cloudrock-metal-worker cloudrock load_categories  <span class="c1"># vpc vm storage ...</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-t<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span>cloudrock<span class="w"> </span>load_categories<span class="w">  </span><span class="c1"># vpc vm storage ...</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>With Helm deployment</li>
@@ -2578,21 +2580,21 @@ or use management command for loading the pre-defined categories.</p>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Example:</span>
-  kubectl get pods -A <span class="p">|</span> grep cloudrock-metal-worker <span class="c1"># --&gt;</span>
-  <span class="c1"># default       cloudrock-metal-worker-6d98cd98bd-wps8n   1/1     Running     0          9m9s</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Example:</span>
+<span class="w">  </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-A<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cloudrock-metal-worker<span class="w"> </span><span class="c1"># --&gt;</span>
+<span class="w">  </span><span class="c1"># default       cloudrock-metal-worker-6d98cd98bd-wps8n   1/1     Running     0          9m9s</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Connect to pod via shell</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="c1"># Example:</span>
-  kubectl <span class="nb">exec</span> -it cloudrock-metal-worker-6d98cd98bd-wps8n -- /bin/bash
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1"># Example:</span>
+<span class="w">  </span>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>cloudrock-metal-worker-6d98cd98bd-wps8n<span class="w"> </span>--<span class="w"> </span>/bin/bash
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>Execute command to see available or add a category</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>  cloudrock load_categories  <span class="c1"># vpc vm storage ...</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>cloudrock<span class="w"> </span>load_categories<span class="w">  </span><span class="c1"># vpc vm storage ...</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="creating-public-offering">Creating public Offering</h3>
 <p>Once you have a service provider and at least one category defined, you can add a new service offering.</p>
@@ -2614,7 +2616,7 @@ or use management command for loading the pre-defined categories.</p>
   <small>
     
       Last update:
-      2022-09-26
+      2022-09-28
     
   </small>
 </div>
@@ -2633,42 +2635,6 @@ or use management command for loading the pre-defined categories.</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Guide" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              User Guide
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../projects-removal-admin/" class="md-footer__link md-footer__link--next" aria-label="Next: Multiple projects removal via admin panel" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Multiple projects removal via admin panel
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2695,14 +2661,13 @@ or use management command for loading the pre-defined categories.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
       
         <script src="../../js/print-site.js"></script>
       
-    
     
   </body>
 </html>
