@@ -938,6 +938,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../admin-guide/deployment/helm/docs/proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../admin-guide/deployment/helm/docs/rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -4665,20 +4679,16 @@ on a Kubernetes cluster using the <a href="https://helm.sh">Helm</a> package man
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>
-<p>Setup database:</p>
-<p>3.1 Setup single PostgreSQL DB: <a href="#admin-guide-deployment-helm-docs-postgres-db">instructions</a>, or</p>
-<p>3.2 Setup PostgreSQL HA DB: <a href="#admin-guide-deployment-helm-docs-postgres-db-ha">instructions</a></p>
+<p>Setup database:
+    3.1 Setup single PostgreSQL DB: <a href="#admin-guide-deployment-helm-docs-postgres-db">instructions</a>, or
+    3.2 Setup PostgreSQL HA DB: <a href="#admin-guide-deployment-helm-docs-postgres-db-ha">instructions</a></p>
 <p><strong>NB</strong> Only one of these two options should be used. Otherwise, DB will be unavailable.</p>
 </li>
 <li>
 <p>Install minio (for database backups): <a href="#admin-guide-deployment-helm-docs-minio">instructions</a></p>
 </li>
-<li>
-<p>Install RabbitMQ for task queue: <a href="#admin-guide-deployment-helm-docs-rabbitmq">instructions</a></p>
-</li>
-<li>
-<p>Install Helm package:</p>
-</li>
+<li>Install RabbitMQ for task queue: <a href="#admin-guide-deployment-helm-docs-rabbitmq">instructions</a></li>
+<li>Install Helm package:</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>install<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock
 </code></pre></div></td></tr></table></div>
@@ -4764,6 +4774,7 @@ A secret can be created trough <a href="https://kubernetes.io/docs/tasks/configu
 <li><a href="#admin-guide-deployment-helm-docs-hpa">HPA</a></li>
 <li><a href="#admin-guide-deployment-helm-docs-locust">Stress testing</a></li>
 <li><a href="#admin-guide-deployment-helm-docs-ip-whitelisting">IP whitelisting</a></li>
+<li><a href="#admin-guide-deployment-helm-docs-proxy-setup">Proxy setup</a></li>
 </ul></section><section class="print-page" id="admin-guide-deployment-helm-docs-bootstrap"><h1 id="admin-guide-deployment-helm-docs-bootstrap-bootstrap-configuration">Bootstrap configuration</h1>
 <p>You can create a bootstrapping script and Helm will run
 it right after Cloudrock release installation.</p>
@@ -4845,12 +4856,12 @@ Celery executor (aka <code>cloudrock-metal-worker</code> and <code>cloudrock-met
 </li>
 <li>
 <p>Celery (<code>hpa.celery</code> prefix):</p>
-<p>1.1 <code>enabled</code> - flag for enabling HPA, the same possible values as for API server.</p>
-<p>1.2 <code>workerResources</code> - custom resources for celery worker.
+<p>2.1 <code>enabled</code> - flag for enabling HPA, the same possible values as for API server.</p>
+<p>2.2 <code>workerResources</code> - custom resources for celery worker.
     <code>requests.cpu</code> param is mandatory for proper HPA work.</p>
-<p>1.3 <code>beatResources</code> - custom resources for celery beat.
+<p>2.3 <code>beatResources</code> - custom resources for celery beat.
     <code>requests.cpu</code> param is mandatory for proper HPA work.</p>
-<p>1.4 <code>cpuUtilizationBorder</code> - border percentage of
+<p>2.4 <code>cpuUtilizationBorder</code> - border percentage of
     average CPU utilization per pod for deployment.</p>
 </li>
 </ol></section><section class="print-page" id="admin-guide-deployment-helm-docs-ip-whitelisting"><h1 id="admin-guide-deployment-helm-docs-ip-whitelisting-limiting-network-access-to-metal-apis">Limiting network access to Metal APIs</h1>
@@ -4952,12 +4963,12 @@ for more information about UI interaction.</p>
     for locust worker (used as container env vars).</li>
 <li><code>worker.config.configmapName</code> - name of configmap with locustfile</li>
 <li><code>worker.config.locust-mode-worker</code> - worker mode flag.
-    Please, don't change it, because for new versions of locust
-    this flag is mandatory for a worker node.</li>
+     Please, don't change it, because for new versions of locust
+     this flag is mandatory for a worker node.</li>
 <li><code>worker.config.locust-locustfile</code> - path to the injected locust file.
-    Same rules as for <code>master.config.locust-locustfile</code>.</li>
+     Same rules as for <code>master.config.locust-locustfile</code>.</li>
 <li><code>worker.config.locust-master-node-host</code> - hostname of the locust master service,
-    which is formatted as <code>&lt;locust_release_name&gt;-master-svc</code></li>
+     which is formatted as <code>&lt;locust_release_name&gt;-master-svc</code></li>
 <li><code>worker.replicaCount</code> - number of locust workers</li>
 </ol>
 <p>You can find available variables for master and worker configuration
@@ -5182,10 +5193,9 @@ psql<span class="w"> </span>-U<span class="w"> </span>cloudrock<span class="w"> 
 </li>
 </ul>
 <h2 id="admin-guide-deployment-helm-docs-postgres-backup-management-backups-restoration">Backups restoration</h2>
-<p>To restore backups you need to:</p>
-<ol>
-<li>Connect to the restoration pod. The major prerequisite for this is stopping the Cloudrock backend pods to avoid errors. <strong>NB: During restoration process, the site will be unavailable</strong>. For this, please execute the following lines in the Kubernetes node:</li>
-</ol>
+<p>To restore backups you need to connect to the restoration pod. The major prerequisite for this is stopping the
+Cloudrock backend pods to avoid errors. <strong>NB: During restoration process, the site will be unavailable</strong>. For this,
+please execute the following lines in the Kubernetes node:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -5307,7 +5317,7 @@ the following variables in <code>values.yaml</code> (<code>postgresql-ha-values.
 <li><code>pgpoolImage.tag</code> - tag of <code>Pgpool</code> image.
     Possible tags for default image can be found <a href="https://hub.docker.com/r/bitnami/pgpool/tags">here</a></li>
 <li><code>postgresqlImage.tag</code> - tag of <code>PostgreSQL</code> image.
-    Possible tags for default image can be found <a href="https://hub.docker.com/r/bitnami/postgresql-repmgr/tags/">here</a></li>
+     Possible tags for default image can be found <a href="https://hub.docker.com/r/bitnami/postgresql-repmgr/tags/">here</a></li>
 <li><code>pgpoolImage.tag</code> - registry of <code>Pgpool</code> image.</li>
 <li><code>postgresqlImage.tag</code> - registry of <code>PostgreSQL</code> image.</li>
 </ol>
@@ -5335,7 +5345,28 @@ is used as a database for Cloudrock.</p>
     Possible tags for default image can be found <a href="https://hub.docker.com/r/bitnami/postgresql/tags">here</a></li>
 <li><code>image.registry</code> - registry of <code>PostgreSQL</code> image.</li>
 </ol>
-<p>More information related to possible values <a href="https://github.com/bitnami/charts/tree/master/bitnami/postgresql#parameters">here</a>.</p></section><section class="print-page" id="admin-guide-deployment-helm-docs-rabbitmq"><h1 id="admin-guide-deployment-helm-docs-rabbitmq-rabbitmq-configuration">RabbitMQ configuration</h1>
+<p>More information related to possible values <a href="https://github.com/bitnami/charts/tree/master/bitnami/postgresql#parameters">here</a>.</p></section><section class="print-page" id="admin-guide-deployment-helm-docs-proxy-setup"><h1 id="admin-guide-deployment-helm-docs-proxy-setup-proxy-setup-for-cloudrock-components">Proxy setup for Cloudrock components</h1>
+<p>You can setup the proxy environment variables <code>https_proxy</code>, <code>http_proxy</code> and <code>no_proxy</code> for Cloudrock component containers.
+For this, please set values for the <code>proxy.httpsProxy</code>, <code>proxy.httpProxy</code> and <code>proxy.noProxy</code> variables in <code>cloudrock/values.yaml</code> file.</p>
+<p>Example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">proxy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">httpsProxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://proxy.example.com/&quot;</span>
+<span class="w">  </span><span class="nt">httpProxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://proxy.example.com/&quot;</span>
+<span class="w">  </span><span class="nt">noProxy</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;.test&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Note</strong>: you can set variables separately, i.e. leave some of them blank:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>proxy:
+<span class="w">  </span>httpsProxy:<span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span>httpProxy:<span class="w"> </span><span class="s2">&quot;http://proxy.example.com/&quot;</span>
+<span class="w">  </span>noProxy:<span class="w"> </span><span class="s2">&quot;.test&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>In the previous example, the <code>https_proxy</code> env variable won't be present in the containers.</p></section><section class="print-page" id="admin-guide-deployment-helm-docs-rabbitmq"><h1 id="admin-guide-deployment-helm-docs-rabbitmq-rabbitmq-configuration">RabbitMQ configuration</h1>
 <p>For rabbitmq installation,
 <a href="https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq">bitnami/rabbitmq</a>
 is used.</p>
@@ -14257,8 +14288,17 @@ accounting enabled and limits enforced.</p>
 <p>Download this repository</p>
 </li>
 <li>
+<p>At least 3 nodes with minimal requirements for Kubernetes nodes</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>8GB<span class="w"> </span>RAM
+<span class="m">4</span><span class="w"> </span>vCPU
+30GB<span class="w"> </span><span class="k">for</span><span class="w"> </span>system<span class="w"> </span>volume<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>dedicated<span class="w"> </span>60GB<span class="w"> </span><span class="k">for</span><span class="w"> </span>storage<span class="w"> </span><span class="o">(</span>Longhorn<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
 <p>Install <code>kubernetes.core</code> collection from ansible galaxy.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -14274,13 +14314,16 @@ ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<
 curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz<span class="w"> </span>https://galaxy.ansible.com/download/ansible-posix-1.4.0.tar.gz
 ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz
 </code></pre></div></td></tr></table></div>
-1. Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
+</li>
+<li>
+<p>Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
 </li>
 <li>
 <p>(Optional) Run the playbook to setup infrastructure (Kubernetes and Longhorn):</p>
-<p>```bash
-cd ansible-config
-ansible-playbook -D -i rke2_inventory install-infrastructure.yaml</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>install-infrastructure.yaml
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Run the playbook to install Cloudrock and dependencies:</p>
@@ -14378,7 +14421,7 @@ ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class=
 <p>Same works for Celery worker:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>cloudrock-metal-worker<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div></td></tr></table></div>
-<p><strong>Note: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned command</strong></p>
+<p><strong>Note</strong>: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned command</p>
 <h2 id="admin-guide-rke2-setup-rke2-setup-update-ssl-certificates">Update SSL certificates</h2>
 <p>To update the SSL certificates, please do the following steps:</p>
 <ol>
@@ -14391,11 +14434,11 @@ ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class=
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># create / renew token for admin user
-kubectl -n kubernetes-dashboard create token admin-user
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># create / renew token for admin user</span>
+kubectl<span class="w"> </span>-n<span class="w"> </span>kubernetes-dashboard<span class="w"> </span>create<span class="w"> </span>token<span class="w"> </span>admin-user
 
-# setup kubectl port fortward to k8s-dashboard service
-kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard --address 0.0.0.0 8001:443
+<span class="c1"># setup kubectl port fortward to k8s-dashboard service</span>
+kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>kubernetes-dashboard<span class="w"> </span>service/kubernetes-dashboard<span class="w"> </span>--address<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="m">8001</span>:443
 </code></pre></div></td></tr></table></div>
 <p>K8s dashboard should now be accessible on port 8001 in that node -- or load balancer node on port 8001 if configured.</p>
 <h2 id="admin-guide-rke2-setup-rke2-setup-recover-data-from-db-backup">Recover data from DB backup</h2>
@@ -14482,7 +14525,16 @@ Please enter backup&#39;s name:
 <h3 id="developer-guide-ad-hoc-scripts-restore-cpugpuram-usages-for-a-month">Restore CPU/GPU/RAM usages for a month</h3>
 <p>Sometimes, Cloudrock can have issues with data correctness. They can be caused by different circumstansies, e.g. problems with data syncronization between Cloudrock backend and service provider software. In order to resolve these issues, a user can restore usage data with <a href="../developer-guide/scripts/update_usages.py">restore_usages.py</a> script.</p>
 <h3 id="developer-guide-ad-hoc-scripts-generate-openmetrics-file-with-usages-for-several-months">Generate openmetrics file with usages for several months</h3>
-<p>If a user needs to create openmetrics file with usages, e.g. for <a href="https://medium.com/tlvince/prometheus-backfilling-a92573eb712c">historical data backfilling in Prometheus</a>, the <a href="../developer-guide/scripts/generate_openmetrics_usages.py">generate_openmetrics_usages.py</a> can be used.</p></section><section class="print-page" id="developer-guide-background"><h1 id="developer-guide-background-background-processing">Background processing</h1>
+<p>If a user needs to create openmetrics file with usages, e.g. for <a href="https://medium.com/tlvince/prometheus-backfilling-a92573eb712c">historical data backfilling in Prometheus</a>, the <a href="../developer-guide/scripts/generate_openmetrics_usages.py">generate_openmetrics_usages.py</a> can be used.</p>
+<h3 id="developer-guide-ad-hoc-scripts-prolong-expired-projects">Prolong expired projects</h3>
+<p>If a user needs to prolong an expired project with remote resources, <a href="../developer-guide/scripts/prolong_remote_projects.py">this script</a> should be used. It can:</p>
+<ol>
+<li>automatically detect projects with pending update requests</li>
+<li>approve the requests</li>
+<li>set state OK for terminating resources both in a local Cloudrock and remote one</li>
+</ol>
+<h3 id="developer-guide-ad-hoc-scripts-wipe-tenants-and-all-related-resources-from-openstack">Wipe tenants and all related resources from OpenStack</h3>
+<p>If a user needs to remove a tenant with all related objects (instances, volumes, backups, etc.) manually, <a href="../developer-guide/scripts/wipe-tenants.py">this script</a> should be used. It removes all the tenants with names from <code>tenant_names</code> list using an OpenStack administrator project. Please, replace <code>&lt;main-tenant-uuid&gt;</code> (line 13) with the corresponding UUID of the admin tenant in Cloudrock.</p></section><section class="print-page" id="developer-guide-background"><h1 id="developer-guide-background-background-processing">Background processing</h1>
 <p>For executing heavier requests and performing background tasks Cloudrock is
 using <a href="https://docs.celeryproject.org/en/stable/">Celery</a>. Celery is a task queue
 that supports multiple backends for storing the tasks and results.

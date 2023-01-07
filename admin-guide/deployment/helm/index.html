@@ -1025,6 +1025,20 @@
   
   
     <li class="md-nav__item">
+      <a href="docs/proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="docs/rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -2593,20 +2607,16 @@ on a Kubernetes cluster using the <a href="https://helm.sh">Helm</a> package man
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>
-<p>Setup database:</p>
-<p>3.1 Setup single PostgreSQL DB: <a href="docs/postgres-db/">instructions</a>, or</p>
-<p>3.2 Setup PostgreSQL HA DB: <a href="docs/postgres-db-ha/">instructions</a></p>
+<p>Setup database:
+    3.1 Setup single PostgreSQL DB: <a href="docs/postgres-db/">instructions</a>, or
+    3.2 Setup PostgreSQL HA DB: <a href="docs/postgres-db-ha/">instructions</a></p>
 <p><strong>NB</strong> Only one of these two options should be used. Otherwise, DB will be unavailable.</p>
 </li>
 <li>
 <p>Install minio (for database backups): <a href="docs/minio/">instructions</a></p>
 </li>
-<li>
-<p>Install RabbitMQ for task queue: <a href="docs/rabbitmq/">instructions</a></p>
-</li>
-<li>
-<p>Install Helm package:</p>
-</li>
+<li>Install RabbitMQ for task queue: <a href="docs/rabbitmq/">instructions</a></li>
+<li>Install Helm package:</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span>helm<span class="w"> </span>install<span class="w"> </span>cloudrock<span class="w"> </span>cloudrock
 </code></pre></div></td></tr></table></div>
@@ -2683,7 +2693,7 @@ A secret can be created trough <a href="https://kubernetes.io/docs/tasks/configu
   <small>
     
       Last update:
-      2022-10-18
+      2023-01-07
     
   </small>
 </div>

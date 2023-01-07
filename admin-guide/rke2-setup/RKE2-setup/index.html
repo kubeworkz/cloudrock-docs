@@ -938,6 +938,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../deployment/helm/docs/proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../deployment/helm/docs/rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -2616,8 +2630,17 @@
 <p>Download this repository</p>
 </li>
 <li>
+<p>At least 3 nodes with minimal requirements for Kubernetes nodes</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>8GB<span class="w"> </span>RAM
+<span class="m">4</span><span class="w"> </span>vCPU
+30GB<span class="w"> </span><span class="k">for</span><span class="w"> </span>system<span class="w"> </span>volume<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>dedicated<span class="w"> </span>60GB<span class="w"> </span><span class="k">for</span><span class="w"> </span>storage<span class="w"> </span><span class="o">(</span>Longhorn<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
 <p>Install <code>kubernetes.core</code> collection from ansible galaxy.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2633,13 +2656,16 @@ ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<
 curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz<span class="w"> </span>https://galaxy.ansible.com/download/ansible-posix-1.4.0.tar.gz
 ansible-galaxy<span class="w"> </span>collection<span class="w"> </span>install<span class="w"> </span>ansible-galaxy/ansible-posix-1.4.0.tar.gz
 </code></pre></div></td></tr></table></div>
-1. Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
+</li>
+<li>
+<p>Adjust variables in <code>ansible-config/rke2_vars</code> file</p>
 </li>
 <li>
 <p>(Optional) Run the playbook to setup infrastructure (Kubernetes and Longhorn):</p>
-<p>```bash
-cd ansible-config
-ansible-playbook -D -i rke2_inventory install-infrastructure.yaml</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ansible-config
+ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class="w"> </span>rke2_inventory<span class="w"> </span>install-infrastructure.yaml
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p>Run the playbook to install Cloudrock and dependencies:</p>
@@ -2737,7 +2763,7 @@ ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class=
 <p>Same works for Celery worker:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">100</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>cloudrock-metal-worker<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div></td></tr></table></div>
-<p><strong>Note: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned command</strong></p>
+<p><strong>Note</strong>: if you use a non-default namespace for Cloudrock release, please change the value for <code>-n</code> option in the aforementioned command</p>
 <h2 id="update-ssl-certificates">Update SSL certificates</h2>
 <p>To update the SSL certificates, please do the following steps:</p>
 <ol>
@@ -2750,11 +2776,11 @@ ansible-playbook<span class="w"> </span>-D<span class="w"> </span>-i<span class=
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code># create / renew token for admin user
-kubectl -n kubernetes-dashboard create token admin-user
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># create / renew token for admin user</span>
+kubectl<span class="w"> </span>-n<span class="w"> </span>kubernetes-dashboard<span class="w"> </span>create<span class="w"> </span>token<span class="w"> </span>admin-user
 
-# setup kubectl port fortward to k8s-dashboard service
-kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard --address 0.0.0.0 8001:443
+<span class="c1"># setup kubectl port fortward to k8s-dashboard service</span>
+kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>kubernetes-dashboard<span class="w"> </span>service/kubernetes-dashboard<span class="w"> </span>--address<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="m">8001</span>:443
 </code></pre></div></td></tr></table></div>
 <p>K8s dashboard should now be accessible on port 8001 in that node -- or load balancer node on port 8001 if configured.</p>
 <h2 id="recover-data-from-db-backup">Recover data from DB backup</h2>
@@ -2817,7 +2843,7 @@ Please enter backup&#39;s name:
   <small>
     
       Last update:
-      2023-01-05
+      2023-01-07
     
   </small>
 </div>

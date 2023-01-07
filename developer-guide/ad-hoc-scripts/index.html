@@ -936,6 +936,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../admin-guide/deployment/helm/docs/proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../admin-guide/deployment/helm/docs/rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -1568,6 +1582,20 @@
           <li class="md-nav__item">
   <a href="#generate-openmetrics-file-with-usages-for-several-months" class="md-nav__link">
     Generate openmetrics file with usages for several months
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prolong-expired-projects" class="md-nav__link">
+    Prolong expired projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe-tenants-and-all-related-resources-from-openstack" class="md-nav__link">
+    Wipe tenants and all related resources from OpenStack
   </a>
   
 </li>
@@ -2496,6 +2524,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#prolong-expired-projects" class="md-nav__link">
+    Prolong expired projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wipe-tenants-and-all-related-resources-from-openstack" class="md-nav__link">
+    Wipe tenants and all related resources from OpenStack
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2524,13 +2566,22 @@
 <p>Sometimes, Cloudrock can have issues with data correctness. They can be caused by different circumstansies, e.g. problems with data syncronization between Cloudrock backend and service provider software. In order to resolve these issues, a user can restore usage data with <a href="../scripts/update_usages.py">restore_usages.py</a> script.</p>
 <h3 id="generate-openmetrics-file-with-usages-for-several-months">Generate openmetrics file with usages for several months</h3>
 <p>If a user needs to create openmetrics file with usages, e.g. for <a href="https://medium.com/tlvince/prometheus-backfilling-a92573eb712c">historical data backfilling in Prometheus</a>, the <a href="../scripts/generate_openmetrics_usages.py">generate_openmetrics_usages.py</a> can be used.</p>
+<h3 id="prolong-expired-projects">Prolong expired projects</h3>
+<p>If a user needs to prolong an expired project with remote resources, <a href="../scripts/prolong_remote_projects.py">this script</a> should be used. It can:</p>
+<ol>
+<li>automatically detect projects with pending update requests</li>
+<li>approve the requests</li>
+<li>set state OK for terminating resources both in a local Cloudrock and remote one</li>
+</ol>
+<h3 id="wipe-tenants-and-all-related-resources-from-openstack">Wipe tenants and all related resources from OpenStack</h3>
+<p>If a user needs to remove a tenant with all related objects (instances, volumes, backups, etc.) manually, <a href="../scripts/wipe-tenants.py">this script</a> should be used. It removes all the tenants with names from <code>tenant_names</code> list using an OpenStack administrator project. Please, replace <code>&lt;main-tenant-uuid&gt;</code> (line 13) with the corresponding UUID of the admin tenant in Cloudrock.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-09-28
+      2023-01-07
     
   </small>
 </div>

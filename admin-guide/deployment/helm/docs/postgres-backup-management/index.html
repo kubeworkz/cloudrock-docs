@@ -992,6 +992,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -2528,10 +2542,9 @@
 </li>
 </ul>
 <h2 id="backups-restoration">Backups restoration</h2>
-<p>To restore backups you need to:</p>
-<ol>
-<li>Connect to the restoration pod. The major prerequisite for this is stopping the Cloudrock backend pods to avoid errors. <strong>NB: During restoration process, the site will be unavailable</strong>. For this, please execute the following lines in the Kubernetes node:</li>
-</ol>
+<p>To restore backups you need to connect to the restoration pod. The major prerequisite for this is stopping the
+Cloudrock backend pods to avoid errors. <strong>NB: During restoration process, the site will be unavailable</strong>. For this,
+please execute the following lines in the Kubernetes node:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2631,7 +2644,7 @@ rm<span class="w"> </span>/tmp/backup.sql
   <small>
     
       Last update:
-      2022-12-11
+      2023-01-07
     
   </small>
 </div>

@@ -992,6 +992,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../proxy-setup/" class="md-nav__link">
+        Proxy setup for Cloudrock components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../rabbitmq/" class="md-nav__link">
         RabbitMQ configuration
       </a>
@@ -2528,12 +2542,12 @@ for more information about UI interaction.</p>
     for locust worker (used as container env vars).</li>
 <li><code>worker.config.configmapName</code> - name of configmap with locustfile</li>
 <li><code>worker.config.locust-mode-worker</code> - worker mode flag.
-    Please, don't change it, because for new versions of locust
-    this flag is mandatory for a worker node.</li>
+     Please, don't change it, because for new versions of locust
+     this flag is mandatory for a worker node.</li>
 <li><code>worker.config.locust-locustfile</code> - path to the injected locust file.
-    Same rules as for <code>master.config.locust-locustfile</code>.</li>
+     Same rules as for <code>master.config.locust-locustfile</code>.</li>
 <li><code>worker.config.locust-master-node-host</code> - hostname of the locust master service,
-    which is formatted as <code>&lt;locust_release_name&gt;-master-svc</code></li>
+     which is formatted as <code>&lt;locust_release_name&gt;-master-svc</code></li>
 <li><code>worker.replicaCount</code> - number of locust workers</li>
 </ol>
 <p>You can find available variables for master and worker configuration
@@ -2557,7 +2571,7 @@ and must be equal to <code>master.config.locust-host</code></p>
   <small>
     
       Last update:
-      2022-09-28
+      2023-01-07
     
   </small>
 </div>
